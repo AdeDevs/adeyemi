@@ -34,7 +34,8 @@ function HomePage() {
             <div className="home-nav">
 
             </div>
-            <h1>home</h1>
+            <h1>homuu</h1>
+            <p>ile</p>
             <footer>
                 <h1>01</h1>
             </footer>
