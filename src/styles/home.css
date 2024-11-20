@@ -1,16 +1,9 @@
 .home {
     font-family: "Montserrat", sans-serif;
     width: 100%;
-    position: relative;
+    padding: 10px 20px;
+    background-color: red;
     box-sizing: border-box;
-    height: 100vh;
-    overflow-y: scroll;
-    background-color: #f2f2f2;
-}
-
-.home .home-nav {
-    background-color: #f2f2f2;
-    padding: 28px;
 }
 
 .home footer {
@@ -19,14 +12,8 @@
     box-sizing: border-box;
     line-height: 100%;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 20px;
+    left: 20px;
     font-weight: 500;
     width: fit-content;
 }
-/* 
-@media (max-width: 700px) {
-    .home {
-        height: 90vh;
-    }
-} */
