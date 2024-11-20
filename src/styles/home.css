@@ -9,7 +9,8 @@
 }
 
 .home .home-nav {
-    background-color: blue;
+    background-color: green;
+    height: 100vh;
 }
 
 .home footer {
