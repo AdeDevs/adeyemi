@@ -5,12 +5,12 @@
     box-sizing: border-box;
     height: 100vh;
     overflow-y: scroll;
-    background-color: red;
+    background-color: #f2f2f2;
 }
 
 .home .home-nav {
-    background-color: green;
-    height: 100vh;
+    background-color: #f2f2f2;
+    padding: 28px;
 }
 
 .home footer {

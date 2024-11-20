@@ -5,8 +5,10 @@
     width: 100%;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-    background-color: green;
+    background-color: #f2f2f2;
     position: fixed;
+    overflow: hidden;
+    z-index: 1000;
     top: 0;
 }
 
@@ -18,7 +20,7 @@
 .navigation nav {
     display: inline-flex;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #f2f2f2;
     width: 100%;
     padding: 15px 20px;
     box-sizing: border-box;
@@ -42,9 +44,9 @@
     font-size: 14px;
     font-weight: 500;
     transition: .3s ease-in-out;
-    border-bottom: 2px solid #f2f2f2;
+    border-bottom: 3px solid #f2f2f2;
     &:hover, :active{
-        border-bottom: 2px solid #000;
+        border-bottom: 3px solid #000;
     }
 }
 
@@ -133,6 +135,9 @@
     }
     .toggle-menu {
       display: block;
+    }
+    .navigation nav {
+      padding: 15px 10px;
     }
   }
   
