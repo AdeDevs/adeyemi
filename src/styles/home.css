@@ -4,16 +4,12 @@
     position: relative;
     box-sizing: border-box;
     height: 100vh;
+    overflow-y: scroll;
     background-color: red;
 }
 
-.home .home-box {
-    background-color: green;
-    height: 92%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
+.home .home-nav {
+    background-color: blue;
 }
 
 .home footer {
