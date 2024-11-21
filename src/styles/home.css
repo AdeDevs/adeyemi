@@ -93,14 +93,6 @@
 }
 
 @media (max-height: 760px) {
-    .home {
-        height: 100vh;
-        background-color: red;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
     .socials {
         flex-direction: row;
     }
