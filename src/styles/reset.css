@@ -7,7 +7,7 @@ html {
     margin:0;
     padding:0;
     border:0;
-    background-color: #f2f2f2;
+    background-color: #111;
   }
   
   body, div, span, object, iframe,
@@ -36,7 +36,7 @@ html {
   /* Line-height should always be unitless! */
   body {
     line-height: 1.5;
-    background: #f2f2f2;
+    background: #111;
     height: 100vh;
     overflow-y: hidden;
   }

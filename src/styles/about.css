@@ -1,0 +1,141 @@
+.about {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+}
+
+.about main {
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about main .intro {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.intro h1 {
+    font-size: 1.8em;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.intro p {
+    font-size: 13px;
+    color: #c2c2c2;
+    margin: 10px 0;
+    width: 80%;
+}
+
+.intro a {
+    color: #777;
+    text-decoration: underline 1.5px #777777;
+    text-underline-offset: 0.1em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+.intro a:hover{
+    color: #f2f2f2;
+    text-decoration-color: #f2f2f2;
+    text-underline-offset: 0.3em;  
+}
+
+.about main .stats {
+    width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.stats p {
+    font-size: 10px;
+}
+
+.stats-box {
+    align-items: center;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.stats-box .bar {
+    width: 80%;
+    height: 8px;
+    background-color: #000;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: 1px solid #fff;
+}
+
+.bar div {
+    width: 90%;
+    background-color: #fff;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    animation: progress 0.7s ease-in-out forwards;
+    opacity: 0;
+}
+.bar .js {
+    width: 50%;
+}
+.bar .ts {
+    width: 20%;
+}
+.bar .css {
+    width: 80%;
+}
+.bar .react {
+    width: 70%;
+}
+.bar .vue {
+    width: 50%;
+}
+
+
+@keyframes progress {
+    0% {
+      width: 0;
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about main .intro {
+        width: 100%;
+    }
+    .intro p {
+        width: 100%;
+    }
+    .about main .stats {
+        width: 100%;
+    }
+    .about main .stats-box {
+        flex-direction: column;
+        align-items: normal;
+        gap: 7px;
+    }
+    .stats-box .bar {
+        width: 100%;
+    }
+    .stats-box p {
+        width: 100%;
+        text-decoration: underline 2px #fff;
+        text-underline-offset: 3px;
+        text-align: right;
+    }
+  }
