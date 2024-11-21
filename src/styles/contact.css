@@ -1,0 +1,141 @@
+.contact {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+.contact main {
+  padding: 10px 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact a {
+    color: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline 2px;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+    text-underline-offset: 0.1em;
+    color: #777;
+}
+.contact a:hover {
+    text-underline-offset: 5px;
+    color: #fff;
+}
+
+.contact .contact-head {
+    width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.contact-head h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 100%;
+}
+
+.contact-head .contact-info {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.contact .contact-box {
+    width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-box input {
+    border: 2px solid #777;
+    height: 30px;
+    color: #fff;
+    border-radius: 7px;
+    font-family: inherit;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    transition: .3s ease-in-out;
+    background-color: transparent;
+}
+.contact-box input::placeholder {
+    text-transform: capitalize;
+}
+.contact-box input:hover, .contact-box input:focus {
+    border: 2px solid #fff;
+}
+.contact-box input:hover::placeholder {
+    color: #fff;
+}
+
+.contact-box textarea {
+    height: 200px;
+    border-radius: 7px;
+    padding: 15px 10px;
+    color: #fff;
+    border: 2px solid #777;
+    background-color: transparent;
+    font-family: inherit;
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+}
+.contact-box textarea::placeholder {
+    text-transform: capitalize;
+    transition: .3s ease-in-out;
+}
+.contact-box textarea:hover, .contact-box textarea:focus {
+    border: 2px solid #fff;
+}
+.contact-box textarea:hover::placeholder {
+    color: #fff;
+}
+
+.contact-box button {
+    width: 50%;
+    padding: 15px 5px;
+    background-color: transparent;
+    color: #fff;
+    font-family: inherit;
+    border: 2px solid #777;
+    border-radius: 5px;
+    margin:  0 auto;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.contact-box button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .contact .contact-head, .contact .contact-box {
+        width: 100%;
+    }
+    .contact-box button {
+        width: 100%;
+    }
+    .contact-head .contact-info {
+        display: block;
+    }
+    .contact-info li:nth-last-child(1) {
+        text-align: right;
+    }
+}
