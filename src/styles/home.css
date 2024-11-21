@@ -10,6 +10,7 @@
 .number {
     font-size: 4em;
     border-bottom: 5px solid #fff;
+    font-family: "Chakra Petch", sans-serif;
     box-sizing: border-box;
     line-height: 100%;
     position: fixed;

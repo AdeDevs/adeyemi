@@ -25,9 +25,9 @@ function NavPage() {
                     <span className="toggle-menu">
                       <ion-icon name="close-outline" onClick={toggleMenu} />
                     </span>
-                    <li >about</li>
-                    <li >projects</li>
-                    <li >contact</li>
+                    <NavLink to="/about" onClick={toggleMenu}> <li>about</li> </NavLink>
+                    <NavLink to="/projects" onClick={toggleMenu}> <li>projects</li> </NavLink>
+                    <NavLink to="/contact" onClick={toggleMenu}> <li>contact</li> </NavLink>
                 </ul>
             </nav>
         </div>
