@@ -16,11 +16,11 @@
 }
 
 .navigation nav {
-  height: 7vh;
     display: inline-flex;
+    height: 50px;
     justify-content: space-between;
     width: 100%;
-    padding: 0 20px;
+    padding: 15px 20px;
     box-sizing: border-box;
     position: fixed;
     align-items: center;
