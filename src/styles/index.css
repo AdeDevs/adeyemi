@@ -16,12 +16,12 @@
 
 .navigation nav {
   height: 7vh;
-  background-color: #111111;
     display: inline-flex;
     justify-content: space-between;
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+    position: absolute;
     align-items: center;
     z-index: 1000;
 }
