@@ -9,7 +9,7 @@
     color: #fff;
 }
 
-.home .number {
+.number {
     font-size: 4em;
     border-bottom: 5px solid #fff;
     box-sizing: border-box;
@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    position: absolute;
+    position: fixed;
     right: 15px;
     bottom: 15px;
 }
