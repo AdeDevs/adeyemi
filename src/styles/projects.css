@@ -1,0 +1,57 @@
+.projects {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+}
+
+.projects main {
+    padding: 10px 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+}
+.projects-box {
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    justify-content: space-between;
+}
+
+.projects-box section {
+    min-width: 500px;
+    border-radius: 20px;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+.projects-box section::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-image: url(../assets/loopstudios.png);
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: .3s ease-in-out;
+    filter: grayscale(1);
+}
+
+.projects-box section:hover::before {
+    opacity: 1;
+    filter: grayscale(0);
+}

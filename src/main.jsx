@@ -5,6 +5,7 @@ import './styles/index.css'
 import './styles/home.css'
 import './styles/about.css'
 import './styles/contact.css'
+import './styles/projects.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
