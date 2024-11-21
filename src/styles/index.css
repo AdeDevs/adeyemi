@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     position: relative;
+    color: #fff;
 }
 
 .navigation a {
@@ -14,18 +15,35 @@
 }
 
 .navigation nav {
+  height: 7vh;
+  background-color: #111111;
     display: inline-flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 20px;
+    padding: 0 20px;
     box-sizing: border-box;
     align-items: center;
     z-index: 1000;
 }
 
-.navigation h1 {
-    font-weight: 500;
-    font-size: 18px;
+.navigation .adedevs {
+    font-weight: 600;
+    color: #777777;
+    font-size: 17px;
+    text-decoration: underline 0.12em #777777;
+    text-underline-offset: 0.1em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+.navigation .adedevs:hover {
+  color: #f2f2f2;
+  text-decoration-color: #f2f2f2;
+  text-underline-offset: 0.4em; 
+}
+.adedevs.active {
+  color: #f2f2f2;
+  text-decoration: underline 0.15em #f2f2f2;
+  text-underline-offset: 0.4em; 
 }
 
 .navigation .desk-menu {
@@ -39,10 +57,25 @@
     font-size: 14px;
     font-weight: 500;
     transition: .3s ease-in-out;
-    border-bottom: 2px solid #f2f2f2;
-    &:hover, :active{
-        border-bottom: 2px solid #000;
-    }
+}
+
+.desk-menu a {
+  color: #777777;
+  text-decoration: underline 0.12em #777;
+  text-underline-offset: 0.1em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+.desk-menu a:hover {
+  color: #f2f2f2;
+  text-decoration-color: #f2f2f2;
+  text-underline-offset: 0.4em;
+}
+
+.navigation a.active {
+  color: #f2f2f2;
+  text-decoration: underline 0.15em #f2f2f2;
+  text-underline-offset: 0.4em;
 }
 
 .toggle-menu {
@@ -60,7 +93,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: #000;
+    background-color: #f4f4f4;
     position: absolute;
     top: 0;
     left: 0;
@@ -76,6 +109,7 @@
 }
 
 .hamburger-menu .toggle-menu {
+  color: #000;
     text-align: right;
     display: inline-flex;
     justify-content: right;
@@ -88,7 +122,6 @@
     border: 2px solid #b2b2b2;
     border-radius: 20px;
     padding: 3px 10px;
-    color: #fff;
   }
 
 .hamburger-menu li {
@@ -96,13 +129,13 @@
     margin: 0 14px;
     font-weight: 500;
     font-size: 13px;
-    border: 2px solid #848484;
-    color: #848484;
+    border: 2px solid #aeaeae;
+    color: #7a7a7a;
     padding: 5px 10px;
     transition: .3s ease-in-out;
     &:hover {
-      border: 2px solid #fff;
-      color: #fff;
+      border: 2px solid #000;
+      color: #000;
     }
     &:nth-last-child(1) {
         margin-bottom: 25px;
@@ -132,7 +165,7 @@
       display: block;
     }
     .navigation nav {
-      padding: 15px 10px;
+      padding: 0 10px;
     }
   }
   

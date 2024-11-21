@@ -37,8 +37,6 @@ html {
   body {
     line-height: 1.5;
     background: #f2f2f2;
-    height: 100vh;
-    position: relative;
   }
   
   /* Tables still need 'cellspacing="0"' in the markup. */

@@ -1,19 +1,22 @@
 .home {
     font-family: "Montserrat", sans-serif;
     width: 100%;
-    padding: 10px 20px;
-    background-color: red;
+    padding: 10px 15px;
+    background-color: #111;
     box-sizing: border-box;
+    height: 93vh;
+    position: relative;
+    color: #fff;
 }
 
 .home footer {
     font-size: 4em;
-    border-bottom: 5px solid #000;
+    border-bottom: 5px solid #fff;
     box-sizing: border-box;
     line-height: 100%;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
     font-weight: 500;
     width: fit-content;
 }

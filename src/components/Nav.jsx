@@ -10,7 +10,7 @@ function NavPage() {
     return (
         <div className="navigation">
             <nav>
-                <NavLink to="/"> <h1>AdeDevs</h1> </NavLink>
+                <NavLink className="adedevs" to="/"> <h1>AdeDevs</h1> </NavLink>
                 <ul className="desk-menu">
                     <NavLink to="/about"> <li>about</li> </NavLink>
                     <NavLink to="/projects"> <li>projects</li> </NavLink>
