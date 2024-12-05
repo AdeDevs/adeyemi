@@ -53,9 +53,9 @@
     cursor: pointer;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    border-radius: 20px 20px 0 0 ;
+    border-radius: 20px 20px ;
     overflow: hidden;
-    border: 2px solid #000;
+    border: 2px solid #fff;
     height: 500px;
     width: 100%;
     transition: .3s ease-in-out;
