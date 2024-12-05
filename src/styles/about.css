@@ -3,6 +3,7 @@
     width: 100%;
     box-sizing: border-box;
     height: 100vh;
+    overflow-y: hidden;
     position: relative;
     color: #fff;
 }
@@ -11,6 +12,7 @@
     padding: 10px 15px;
     height: 100%;
     width: 100%;
+    overflow-y: hidden;
     display: flex;
     gap: 15px;
     box-sizing: border-box;
@@ -137,5 +139,11 @@
         text-decoration: underline 2px #fff;
         text-underline-offset: 3px;
         text-align: right;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .about main .intro {
+        margin-top: -5vh;
     }
   }

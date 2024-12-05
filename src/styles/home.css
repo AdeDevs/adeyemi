@@ -2,6 +2,7 @@
     font-family: "Montserrat", sans-serif;
     width: 100%;
     box-sizing: border-box;
+    overflow-y: hidden;
     height: 100vh;
     position: relative;
     color: #fff;
@@ -23,11 +24,15 @@
 .socials {
     color: #000;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     position: fixed;
     right: 15px;
     bottom: 15px;
+}
+.socials a {
+    color: inherit;
+    text-decoration: none;
 }
 .socials li {
     display: inline-flex;
@@ -50,6 +55,7 @@
     height: 100%;
     width: 100%;
     display: flex;
+    overflow-y: hidden;
     padding: 10px 15px;
     flex-direction: column;
     box-sizing: border-box;

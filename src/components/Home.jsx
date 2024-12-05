@@ -11,9 +11,9 @@ function HomePage() {
                 <h1>01</h1>
             </footer>
             <ul className="socials">
-                <li><ion-icon name="logo-linkedin"></ion-icon></li>
-                <li><ion-icon name="logo-twitter"></ion-icon></li>
-                <li><ion-icon name="logo-github"></ion-icon></li>
+                <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
+                <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
+                <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
             </ul>
         </div>
     )
