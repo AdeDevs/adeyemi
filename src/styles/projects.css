@@ -53,7 +53,7 @@
     cursor: pointer;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    border-radius: 20px 20px ;
+    border-radius: 15px;
     overflow: hidden;
     border: 2px solid #fff;
     height: 500px;
@@ -97,7 +97,7 @@
 
 @media (max-width: 500px) {
     .projects-box {
-        margin-top: -5vh;
+        margin-top: -7vh;
         width: 100%;
     }
     .projects-box .project-card {
