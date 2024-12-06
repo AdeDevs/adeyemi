@@ -24,7 +24,7 @@
   justify-content: center;
 }
 
-.contact a {
+.contact-info a {
     color: inherit;
     font-size: 13px;
     font-weight: 600;
@@ -34,7 +34,7 @@
     transition: .3s ease-in-out;
     color: #777;
 }
-.contact a:hover {
+.contact-info a:hover {
     text-underline-offset: 5px;
     color: #fff;
 }
