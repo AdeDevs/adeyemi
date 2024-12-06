@@ -31,6 +31,7 @@
     text-decoration: underline 2px;
     transition: text-decoration-color 300ms, text-underline-offset 300ms;
     text-underline-offset: 0.1em;
+    transition: .3s ease-in-out;
     color: #777;
 }
 .contact a:hover {
@@ -127,6 +128,7 @@
     transition: .3s ease-in-out;
     font-weight: 500;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .contact-box button:hover {
