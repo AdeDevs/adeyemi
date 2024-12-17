@@ -7,6 +7,7 @@ function ContactPage() {
         setIsDarkMode(!isDarkMode)
     }
     return (
+        <>
         <div className={`contact ${isDarkMode ? "dark" : ""}`}>
             <main>
                 <div className="contact-head">
@@ -23,6 +24,7 @@ function ContactPage() {
                     <button type="submit">Send</button>
                 </form>
             </main>
+        </div>
             <footer className="number">
                 <h1>04</h1>
             </footer>
@@ -31,7 +33,7 @@ function ContactPage() {
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
                 <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
             </ul>
-        </div>
+        </>
     )
 }
 

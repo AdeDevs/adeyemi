@@ -2,10 +2,12 @@
     font-family: "Montserrat", sans-serif;
     width: 100%;
     box-sizing: border-box;
-    overflow-y: hidden;
-    height: 100vh;
-    position: relative;
     color: #fff;
+    height: 85vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50%, -50%);
 }
 
 .number {
@@ -16,6 +18,7 @@
     line-height: 100%;
     position: fixed;
     bottom: 15px;
+    color: #fff;
     left: 15px;
     font-weight: 500;
     width: fit-content;

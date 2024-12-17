@@ -1,5 +1,6 @@
 function AboutPage() {
     return (
+        <>
         <div className="about">
             <main>
                 <div className="intro">
@@ -45,6 +46,7 @@ function AboutPage() {
                     </div>
                 </div>
             </main>
+        </div>
             <footer className="number">
                 <h1>02</h1>
             </footer>
@@ -53,7 +55,7 @@ function AboutPage() {
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
                 <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
             </ul>
-        </div>
+        </>
     )
 }
 

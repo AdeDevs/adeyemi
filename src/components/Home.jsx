@@ -1,5 +1,6 @@
 function HomePage() {
     return (
+        <>
         <div className="home">
             <main>
                 <div className="content">
@@ -7,6 +8,7 @@ function HomePage() {
                 <p>Frontend Developer</p>
                 </div>
             </main>
+        </div>
             <footer className="number">
                 <h1>01</h1>
             </footer>
@@ -15,7 +17,7 @@ function HomePage() {
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
                 <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
             </ul>
-        </div>
+        </>
     )
 }
 
