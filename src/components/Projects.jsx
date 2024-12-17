@@ -1,6 +1,9 @@
 import Scissors from "../assets/scissors.png"
 import Loopstudios from "../assets/loopstudios.png"
-import Vintage from "../assets/vintagefure.png"
+import Foodpsring from "../assets/foodspring.png"
+import Jolt from "../assets/jolt.png"
+import Auspices from "../assets/auspices.png"
+import Fundraiser from "../assets/fundraiser.png"
 
 function ProjectsPage() {
     return (
@@ -10,10 +13,10 @@ function ProjectsPage() {
                 <div className="projects-box">
                     <section className="project-card">
                         <div className="project-img">
-                            <a href="#"><img src={Scissors} alt="" /></a>
+                            <a href="https://foodspringbyade.vercel.app/" target="_blank"><img src={Foodpsring} alt="" /></a>
                         </div>
                         <div className="project-info">
-                            <h1><a href="#">Scissors</a></h1>
+                            <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
@@ -21,10 +24,10 @@ function ProjectsPage() {
                     </section>
                     <section className="project-card">
                         <div className="project-img">
-                            <a href="#"><img src={Vintage} alt="" /></a>
+                            <a href="https://joltbyade.vercel.app/" target="_blank"><img src={Jolt} alt="" /></a>
                         </div>
                         <div className="project-info">
-                            <h1><a href="#">Vintage</a></h1>
+                            <h1><a href="https://joltbyade.vercel.app/" target="_blank">Jolt</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
@@ -32,10 +35,10 @@ function ProjectsPage() {
                     </section>
                     <section className="project-card">
                         <div className="project-img">
-                            <a href="#"><img src={Loopstudios} alt="" /></a>
+                            <a href="https://auspices.vercel.app/" target="_blank"><img src={Auspices} alt="" /></a>
                         </div>
                         <div className="project-info">
-                            <h1><a href="#">Loopstudios</a></h1>
+                            <h1><a href="https://auspices.vercel.app/" target="_blank">Auspices</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
@@ -43,10 +46,10 @@ function ProjectsPage() {
                     </section>
                     <section className="project-card">
                         <div className="project-img">
-                            <a href="#"><img src={Scissors} alt="" /></a>
+                            <a href="https://fundraiserbyade.vercel.app/" target="_blank"><img src={Fundraiser} alt="" /></a>
                         </div>
                         <div className="project-info">
-                            <h1><a href="#">Foodspring</a></h1>
+                            <h1><a href="https://fundraiserbyade.vercel.app/" target="_blank">Fundraiser</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
@@ -54,10 +57,21 @@ function ProjectsPage() {
                     </section>
                     <section className="project-card">
                         <div className="project-img">
-                            <a href="#"><img src={Scissors} alt="" /></a>
+                            <a href="https://adeloopstudio.web.app/" target="_blank"><img src={Loopstudios} alt="" /></a>
                         </div>
                         <div className="project-info">
-                            <h1><a href="#">Foodspring</a></h1>
+                            <h1><a href="https://adeloopstudio.web.app/" target="_blank">Loopstudios</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card">
+                        <div className="project-img">
+                            <a href="https://kryptykscissors.web.app" target="blank"><img src={Scissors} alt="" /></a>
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://kryptykscissors.web.app" target="blank">Scissors</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
