@@ -83,7 +83,7 @@ function ProjectsPage() {
             <footer className="number">
                 <h1>03</h1>
             </footer>
-            <ul className="socials">
+            <ul className="socials">  
                 <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
                 <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
