@@ -4,8 +4,9 @@ function HomePage() {
         <div className="home">
             <main>
                 <div className="content">
-                <h1>Adeyemi Akinyemi</h1>
-                <p>Frontend Developer</p>
+                <h1>I Am Adeyemi Akinyemi</h1>
+                <p>Frontend Developer. Check out more about me </p>
+                <p>Crafting clean, responsive websites with modern web tech. Explore my work, skills, and experience below</p>
                 </div>
             </main>
         </div>

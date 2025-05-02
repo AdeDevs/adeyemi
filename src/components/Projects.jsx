@@ -11,6 +11,8 @@ import Fundraiser from "../assets/fundraiser.png"
 import FundraiserMob from "../assets/fundraiser-mob.png"
 import Soiga from "../assets/soiga.png"
 import SoigaMob from "../assets/soiga-mob.png"
+import Rotate from "../assets/rotate.png"
+import Gallery from "../assets/gallery.png"
 
 function ProjectsPage() {
     return (
@@ -37,6 +39,28 @@ function ProjectsPage() {
                         </div>
                         <div className="project-info">
                             <h1><a href="https://joltbyade.vercel.app/" target="_blank">Jolt</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card">
+                        <div className="project-img">
+                            <a href="https://rotatebyade.vercel.app/" target="blank"><img src={Rotate} alt="" /></a>
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://rotatebyade.vercel.app/" target="blank">rotate</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card">
+                        <div className="project-img">
+                            <a href="https://kryptykscissors.web.app" target="blank"><img src={Gallery} alt="" /></a>
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://gallerybyade.vercel.app/" target="blank">Gallery</a></h1>
                             <p>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti. Rem, quia. Culpa illo atque quidem, nam asperiores necessitatibus dicta fuga eos tempora laudantium! Rerum, culpa qui.
                             </p>
