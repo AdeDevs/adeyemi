@@ -35,11 +35,12 @@
     width: 80%;
     font-family: 'Courier New', Courier, monospace; 
 }
-.projects-intro button {
+.projects-intro a {
     align-self: flex-end;
     border: 2px solid #777;
     box-sizing: border-box;
     padding: 5px 10px;
+    font-size: 11px;
     height: fit-content;
     background-color: transparent;
     color: inherit;
@@ -49,7 +50,7 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
-.projects-intro button:hover {
+.projects-intro a:hover {
     background-color: #f2f2f2;
     color: #000;
 }
@@ -82,6 +83,12 @@
     background-position: center;
     background-size: cover;
     border-radius: 5px;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.project-img:hover {
+    box-shadow: 3px 3px 1px #22d66c;
+    z-index: 999;
 }
 .card-one .project-img {
     background-image: url(../assets/foodspring.png);
@@ -103,19 +110,21 @@
 .card-six .project-img {
     background-image: url(../assets/dreamspace.png);
 }
-/* .project-mob {
-    display: none;
-} */
-/* .project-img::before {
+.project-img::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
+    border-radius: 5px;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #00000055;
+    background-color: #001a2953;
+    border: 2px solid transparent;
     transition: .3s ease-in-out;
-} */
+}
+.project-img:hover::before {
+    background-color: #b0a2a200;
+}
 
 
 .project-card .project-info {
@@ -161,7 +170,7 @@
         background-position: top;
     }
     .card-one .project-img {
-        background-image: url(../assets/food-mob.png);
+        background-image: url(../assets/foodsprng.png);
     }
     .card-two .project-img {
         background-image: url(../assets/rotate-mob.png);
@@ -182,7 +191,6 @@
 
 @media (max-width: 500px) {
     .projects-box {
-        grid-template-columns: 1fr;
         gap: 50px;
     }
 }

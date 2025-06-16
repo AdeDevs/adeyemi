@@ -2,6 +2,7 @@
     font-family: "Montserrat", sans-serif;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
     position: relative;
     color: #fff;
 }
@@ -100,11 +101,11 @@
 }
 
 @media (max-width: 650px) {
+    .home {
+        width: 100%;
+    }
     .home .home-page {
         padding: 10px 20px;
-    }
-    .hero h1 {
-        font-size: 3em;
     }
     .hero p {
         font-size: 15px;
@@ -120,16 +121,16 @@
     }
     .hero .me {
         grid-column: 2/3;
-        width: 300px;
+        width: 70vw;
     }
 }
 
-@media  (max-width: 400px) {
+@media  (max-width: 500px) {
+    .hero h1 {
+        font-size: 3.4em;
+    }
     .home .home-page .hero {
         width: 100%;
-    }
-    .hero h1 {
-        font-size: 2em;
     }
 }
 

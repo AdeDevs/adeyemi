@@ -19,6 +19,7 @@ function HomePage() {
                             <p>I'm a passionate Frontend Developer who brings designs to life with elegance and functionality. I hold a certification in Frontend Development from <a href="https://www.altschoolafrica.com/" target="_blank">AltSchool Africa</a>, where I honed my skills in crafting seamless and visually stunning user interfaces. Beyond coding, I enjoy writing during my free time, blending creativity and logic in all that I do.</p>
                         </div>
                         <div className="stats">
+                            <h1>Every line of code starts with a tool, here are mine and how much I vibe with them</h1>
                             <div className="stats-box">
                                 <div className="bar">
                                     <div className="width"></div>
@@ -58,77 +59,77 @@ function HomePage() {
                         </div>
                     </div>
                     <div className="projects">
-            <main className="project-page">
-                <div className="projects-intro">
-                   <div className="proj-txt">
-                   <h1>Projects I've Built</h1>
-                   <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
-                   </div>
-                   <button>See More</button>
-                </div>
-                <div className="projects-box">
-                    <section className="project-card card-one">
-                        <div className="project-img"></div>
-                        <div className="project-info">
-                            <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                    <section className="project-card card-two">
-                        <div className="project-img">
-                        </div>
-                        <div className="project-info">
-                            <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                    <section className="project-card card-three">
-                        <div className="project-img">
-                        </div>
-                        <div className="project-info">
-                            <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                    <section className="project-card card-four">
-                        <div className="project-img">
-                        </div>
-                        <div className="project-info">
-                            <h1><a href="https://brookebyade.vercel.app/" target="_blank">brooke</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                    <section className="project-card card-five">
-                        <div className="project-img">
-                        </div>
-                        <div className="project-info">
-                            <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                    <section className="project-card card-six">
-                        <div className="project-img">
-                        </div>
-                        <div className="project-info">
-                            <h1><a href="https://dreamspacebyade.vercel.app/" target="_blank">dreamspace</a></h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
-                            </p>
-                        </div>
-                    </section>
-                </div>
-            </main>
-        </div>
+                        <main className="project-page">
+                            <div className="projects-intro">
+                                <div className="proj-txt">
+                                    <h1>Projects I've Built</h1>
+                                    <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
+                                </div>
+                                <a href="">See More</a>
+                            </div>
+                            <div className="projects-box">
+                                <section className="project-card card-one">
+                                    <a href="https://foodspringbyade.vercel.app/" target="_blank" className="project-img"></a>
+                                    <div className="project-info">
+                                        <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section className="project-card card-two">
+                                    <a href="https://rotatebyade.vercel.app/" target="_blank" className="project-img">
+                                    </a>
+                                    <div className="project-info">
+                                        <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section className="project-card card-three">
+                                    <a href="https://gallerybyade.vercel.app/" target="_blank" className="project-img">
+                                    </a>
+                                    <div className="project-info">
+                                        <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section className="project-card card-four">
+                                    <a href="https://brookebyade.vercel.app/" target="_blank" className="project-img">
+                                    </a>
+                                    <div className="project-info">
+                                        <h1><a href="https://brookebyade.vercel.app/" target="_blank">brooke</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section className="project-card card-five">
+                                    <a href="https://wordcounterbyade.vercel.app/" target="_blank" className="project-img">
+                                    </a>
+                                    <div className="project-info">
+                                        <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section className="project-card card-six">
+                                    <a href="https://dreamspacebyade.vercel.app/" target="_blank" className="project-img">
+                                    </a>
+                                    <div className="project-info">
+                                        <h1><a href="https://dreamspacebyade.vercel.app/" target="_blank">dreamspace</a></h1>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                        </p>
+                                    </div>
+                                </section>
+                            </div>
+                        </main>
+                    </div>
                 </main>
                 {/* <AboutPage />
                 <ProjectsPage /> */}
