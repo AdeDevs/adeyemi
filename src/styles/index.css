@@ -24,7 +24,7 @@
 .navigation nav {
     display: inline-flex;
     height: 50px;
-    background-color: #000000a4;
+    background-color: #111111dc;
     backdrop-filter: blur(10px);
     justify-content: space-between;
     width: 100%;

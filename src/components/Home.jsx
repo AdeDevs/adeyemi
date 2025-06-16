@@ -65,7 +65,7 @@ function HomePage() {
                                     <h1>Projects I've Built</h1>
                                     <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
                                 </div>
-                                <a href="">See More</a>
+                                <a href="https://github.com/AdeDevs/">See More</a>
                             </div>
                             <div className="projects-box">
                                 <section className="project-card card-one">
@@ -73,7 +73,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            A clean, responsive landing page for a premium nutrition brand. Built with React and styled with plain CSS, focused on layout, typography, and mobile-first design.
                                         </p>
                                     </div>
                                 </section>
@@ -83,7 +83,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            A visually bold homepage concept inspired by modern fashion sites. Built using React with subtle animation touches from Framer Motion to enhance movement and flow.
                                         </p>
                                     </div>
                                 </section>
@@ -93,7 +93,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            A minimal and elegant image gallery built with React. Focused on clean layout, strong visual balance, and simple presentation.
                                         </p>
                                     </div>
                                 </section>
@@ -103,7 +103,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://brookebyade.vercel.app/" target="_blank">brooke</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            Landing page for a professional golfer. Designed to be minimal and classy. Built with React and CSS, with a strong focus on spacing and typography.
                                         </p>
                                     </div>
                                 </section>
@@ -113,7 +113,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            A mini tool that analyzes text in real time — tracking word, character, and sentence count. Built with React, using controlled input and basic text logic.
                                         </p>
                                     </div>
                                 </section>
@@ -123,7 +123,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://dreamspacebyade.vercel.app/" target="_blank">dreamspace</a></h1>
                                         <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                                            A sleek, modern homepage for an interior design studio. Built using React and CSS Grid, focused on elegance, balance, and modern layout techniques.
                                         </p>
                                     </div>
                                 </section>
