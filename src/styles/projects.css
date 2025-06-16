@@ -190,7 +190,7 @@
 }
 
 @media (max-width: 500px) {
-    .projects-box {
+    /* .projects-box {
         gap: 50px;
-    }
+    } */
 }
