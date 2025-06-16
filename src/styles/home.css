@@ -2,35 +2,35 @@
     font-family: "Montserrat", sans-serif;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
     color: #fff;
-    height: 85vh;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate( -50%, -50%);
 }
 
-.number {
+/* .number {
     font-size: 4em;
     border-bottom: 5px solid #fff;
     font-family: "Chakra Petch", sans-serif;
     box-sizing: border-box;
     line-height: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     color: #fff;
     left: 15px;
     font-weight: 500;
     width: fit-content;
-}
+} */
 
 .socials {
     color: #000;
     display: flex;
     flex-direction: row;
     gap: 10px;
+    background-color: #11111143;
+    border-radius: 10px;
+    padding: 3px;
+    backdrop-filter: blur(5px);
     position: fixed;
-    right: 15px;
+    right: 20px;
     bottom: 15px;
 }
 .socials a {
@@ -54,49 +54,81 @@
     color: #fff;
 }
 
-.home main {
-    height: 100%;
+.home .home-page {
     width: 100%;
     display: flex;
     overflow-y: hidden;
-    padding: 10px 15px;
+    padding: 10px 30px;
     flex-direction: column;
     box-sizing: border-box;
-    justify-content: center;
 }
 
-.home main .content {
-    margin: 0 auto;
-    width: 80%;
+.home .home-page .hero {
+    margin: 40px 0 20px 0;
+    display: grid;
+    grid-template-columns: 2fr auto;
+    gap: 10px;
+}
+.hero .txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.hero .me {
+    height: 300px;
+    width: 200px;
+    background-image: url(../assets/hero.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    align-self: flex-end;
 }
 
-.content h1 {
+.hero h1 {
     text-transform: uppercase;
     font-size: 4em;
     line-height: 100%;
     width: 100%;
     font-family: "Young Serif", sans-serif;
+    margin-bottom: 10px;
 }
 
-.content p {
+.hero p {
     width: 100%;
-    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-size: 15px;
 }
 
-@media (max-width: 600px) {
-    .content h1 {
+@media (max-width: 650px) {
+    .home .home-page {
+        padding: 10px 20px;
+    }
+    .hero h1 {
         font-size: 3em;
     }
-    .content p {
-        font-size: 13px;
+    .hero p {
+        font-size: 15px;
+    }
+    .home .home-page .hero {
+        gap: 30px;
+        margin: 0 0 20px 0;
+    }
+    .hero .txt {
+        grid-row: 2;
+        height: fit-content;
+        grid-column: 1/3;
+    }
+    .hero .me {
+        grid-column: 2/3;
+        width: 300px;
     }
 }
 
 @media  (max-width: 400px) {
-    .home main .content {
+    .home .home-page .hero {
         width: 100%;
     }
-    .content h1 {
+    .hero h1 {
         font-size: 2em;
     }
 }

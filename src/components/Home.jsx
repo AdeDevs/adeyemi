@@ -1,18 +1,138 @@
+import AboutPage from "./About";
+import ProjectsPage from "./Projects";
+
 function HomePage() {
     return (
         <>
-        <div className="home">
-            <main>
-                <div className="content">
-                <h1>I Am Adeyemi Akinyemi</h1>
-                <p>Frontend Developer. Check out more about me </p>
-                <p>Crafting clean, responsive websites with modern web tech. Explore my work, skills, and experience below</p>
+            <div className="home">
+                <main className="home-page">
+                    <div className="hero">
+                        <div className="txt">
+                            <h1>I Am Adeyemi Akinyemi</h1>
+                            <p>Frontend Developer. Check out more about me </p>
+                            <p>Crafting clean, responsive websites with modern web tech. Explore my work, skills, and experience below</p>
+                        </div>
+                        <div className="me"></div>
+                    </div>
+                    <div className="about">
+                        <div className="intro">
+                            <p>I'm a passionate Frontend Developer who brings designs to life with elegance and functionality. I hold a certification in Frontend Development from <a href="https://www.altschoolafrica.com/" target="_blank">AltSchool Africa</a>, where I honed my skills in crafting seamless and visually stunning user interfaces. Beyond coding, I enjoy writing during my free time, blending creativity and logic in all that I do.</p>
+                        </div>
+                        <div className="stats">
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="width"></div>
+                                </div>
+                                <p>HTML</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="js"></div>
+                                </div>
+                                <p>JAVASCRIPT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="ts"></div>
+                                </div>
+                                <p>TYPESCRIPT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="css"></div>
+                                </div>
+                                <p>CSS</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="react"></div>
+                                </div>
+                                <p>REACT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="vue"></div>
+                                </div>
+                                <p>VUE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="projects">
+            <main className="project-page">
+                <div className="projects-intro">
+                   <div className="proj-txt">
+                   <h1>Projects I've Built</h1>
+                   <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
+                   </div>
+                   <button>See More</button>
+                </div>
+                <div className="projects-box">
+                    <section className="project-card card-one">
+                        <div className="project-img"></div>
+                        <div className="project-info">
+                            <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card card-two">
+                        <div className="project-img">
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card card-three">
+                        <div className="project-img">
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card card-four">
+                        <div className="project-img">
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://brookebyade.vercel.app/" target="_blank">brooke</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card card-five">
+                        <div className="project-img">
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
+                    <section className="project-card card-six">
+                        <div className="project-img">
+                        </div>
+                        <div className="project-info">
+                            <h1><a href="https://dreamspacebyade.vercel.app/" target="_blank">dreamspace</a></h1>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ea voluptatum aut corrupti.
+                            </p>
+                        </div>
+                    </section>
                 </div>
             </main>
         </div>
-            <footer className="number">
-                <h1>01</h1>
-            </footer>
+                </main>
+                {/* <AboutPage />
+                <ProjectsPage /> */}
+            </div>
             <ul className="socials">
                 <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>

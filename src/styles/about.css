@@ -1,31 +1,8 @@
 .about {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
     width: 100%;
     box-sizing: border-box;
-    height: 90vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: hidden;
-    position: absolute;
     color: #fff;
-}
-
-.about main {
-    padding: 10px 15px;
-    height: 100%;
-    width: 100%;
-    overflow-y: hidden;
-    display: flex;
-    gap: 15px;
-    box-sizing: border-box;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.about main .intro {
-    width: 90%;
-    margin: 0 auto;
 }
 
 .intro h1 {
@@ -36,9 +13,7 @@
 
 .intro p {
     font-size: 13px;
-    color: #c2c2c2;
     margin: 10px 0;
-    width: 80%;
 }
 
 .intro a {
@@ -54,17 +29,18 @@
     text-underline-offset: 0.3em;  
 }
 
-.about main .stats {
-    width: 90%;
+.about .stats {
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .stats p {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .stats-box {
@@ -75,17 +51,17 @@
 }
 
 .stats-box .bar {
-    width: 80%;
+    width: 90%;
     height: 8px;
     background-color: #000;
     box-sizing: border-box;
     border-radius: 30px;
-    border: 1px solid #fff;
+    border: 1px solid #22d66c;
 }
 
 .bar div {
     width: 90%;
-    background-color: #fff;
+    background-color: #22d66c;
     height: 100%;
     box-sizing: border-box;
     border-radius: 30px;
@@ -119,17 +95,15 @@
     }
   }
 
-  @media (max-width: 600px) {
-    .about main .intro {
-        width: 100%;
-    }
+  @media (max-width: 650px) {
     .intro p {
         width: 100%;
+        font-size: 15px;
     }
-    .about main .stats {
+    .about .stats {
         width: 100%;
     }
-    .about main .stats-box {
+    .about .stats-box {
         flex-direction: column;
         align-items: normal;
         gap: 7px;
@@ -139,6 +113,7 @@
     }
     .stats-box p {
         width: 100%;
+        font-size: 14px;
         text-decoration: underline 2px #fff;
         text-underline-offset: 3px;
         text-align: right;

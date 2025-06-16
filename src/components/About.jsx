@@ -47,9 +47,6 @@ function AboutPage() {
                 </div>
             </main>
         </div>
-            <footer className="number">
-                <h1>02</h1>
-            </footer>
             <ul className="socials">
                 <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
