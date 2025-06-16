@@ -190,7 +190,8 @@
 }
 
 @media (max-width: 500px) {
-    /* .projects-box {
+    .projects-box {
+        grid-template-columns: 1fr;
         gap: 50px;
-    } */
+    }
 }

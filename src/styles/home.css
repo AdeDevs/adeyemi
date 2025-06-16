@@ -5,6 +5,7 @@
     margin: 0 auto;
     position: relative;
     color: #fff;
+    scroll-behavior: smooth;
 }
 
 /* .number {

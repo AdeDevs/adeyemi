@@ -24,7 +24,7 @@
 .navigation nav {
     display: inline-flex;
     height: 50px;
-    background-color: #11111143;
+    background-color: #000000a4;
     backdrop-filter: blur(10px);
     justify-content: space-between;
     width: 100%;
@@ -108,7 +108,7 @@
     overflow-x: hidden;
     width: 100%;
     max-width: 0;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
     z-index: 1000;
 }
 .hamburger-menu.show {
@@ -165,7 +165,7 @@
     background-color: #00000080;
     backdrop-filter: blur(40px);
     z-index: 999;
-    transition: .4s ease-in-out;
+    transition: .2s ease-in-out;
   }
   .overlay.show {
     max-width: 130vw;

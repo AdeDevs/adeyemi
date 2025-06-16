@@ -14,7 +14,7 @@ function HomePage() {
                         </div>
                         <div className="me"></div>
                     </div>
-                    <div className="about">
+                    <div className="about" id="about">
                         <div className="intro">
                             <p>I'm a passionate Frontend Developer who brings designs to life with elegance and functionality. I hold a certification in Frontend Development from <a href="https://www.altschoolafrica.com/" target="_blank">AltSchool Africa</a>, where I honed my skills in crafting seamless and visually stunning user interfaces. Beyond coding, I enjoy writing during my free time, blending creativity and logic in all that I do.</p>
                         </div>
@@ -58,7 +58,7 @@ function HomePage() {
                             </div>
                         </div>
                     </div>
-                    <div className="projects">
+                    <div className="projects" id="projects">
                         <main className="project-page">
                             <div className="projects-intro">
                                 <div className="proj-txt">
@@ -128,6 +128,23 @@ function HomePage() {
                                     </div>
                                 </section>
                             </div>
+                        </main>
+                    </div>
+                    <div className="contact" id="contact">
+                        <main>
+                            <div className="contact-head">
+                                <h1>contact me</h1>
+                                <ul className="contact-info">
+                                    <li><a href="mailto:adeyemiakinyemi01@gamil.com">adeyemiakinyemi01@gmail.com</a></li>
+                                    <li><a href="tel:+2349076320109">+234 907 632 0109</a></li>
+                                </ul>
+                            </div>
+                            <form action="https://formsubmit.co/adeyemiakinyemi01@gmail.com" method="POST" target="_blank" className="contact-box">
+                                <input type="email" name="email" id="" placeholder="your email" required />
+                                <input type="text" name="name" id="" placeholder="your name" required />
+                                <textarea name="message" id="" placeholder="your message" required></textarea>
+                                <button type="submit">Send</button>
+                            </form>
                         </main>
                     </div>
                 </main>

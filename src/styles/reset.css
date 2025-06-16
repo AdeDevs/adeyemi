@@ -8,6 +8,7 @@ html {
     padding:0;
     border:0;
     background-color: #111;
+    scroll-behavior: smooth;
   }
   
   body, div, span, object, iframe,

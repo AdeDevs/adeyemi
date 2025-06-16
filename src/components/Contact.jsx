@@ -8,13 +8,13 @@ function ContactPage() {
     }
     return (
         <>
-        <div className={`contact ${isDarkMode ? "dark" : ""}`}>
+        <div className="contact">
             <main>
                 <div className="contact-head">
-                <h1 onClick={toggleDarkMode}>contact me</h1>
+                <h1>contact me</h1>
                 <ul className="contact-info">
-                    <li><a className={`${isDarkMode ? "dark" : ""}`} href="mailto:adeyemiakinyemi01@gamil.com">adeyemiakinyemi01@gmail.com</a></li>
-                    <li><a className={`${isDarkMode ? "dark" : ""}`} href="tel:+2349076320109">+234 907 632 0109</a></li>
+                    <li><a href="mailto:adeyemiakinyemi01@gamil.com">adeyemiakinyemi01@gmail.com</a></li>
+                    <li><a href="tel:+2349076320109">+234 907 632 0109</a></li>
                 </ul>
                 </div>
                 <form action="" className="contact-box">
