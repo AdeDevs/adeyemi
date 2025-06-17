@@ -29,7 +29,7 @@ function NavPage() {
                     <a href="#about" onClick={toggleMenu}> <li>about</li> </a>
                     <a href="#projects" onClick={toggleMenu}> <li>projects</li> </a>
                     <a href="#contact" onClick={toggleMenu}> <li>contact</li> </a>
-                    <a href="" onClick={toggleMenu}><li>my resume</li></a>
+                    <a href="resume.pdf" download={true} onClick={toggleMenu}><li>my resume</li></a>
                 </ul>
             </nav>
         </div>
