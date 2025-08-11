@@ -8,7 +8,7 @@ function HomePage() {
                 <main className="home-page">
                     <div className="hero">
                         <div className="txt">
-                            <h1>I Am Adeyemi Akinyemi</h1>
+                            <h1 className="big">I Am Adeyemi Akinyemi</h1>
                             <p>Frontend Developer. Check out more about me </p>
                             <p>Crafting clean, responsive websites with modern web tech. Explore my work, skills, and experience below</p>
                         </div>
@@ -19,6 +19,8 @@ function HomePage() {
                             <p>I'm a passionate Frontend Developer who brings designs to life with elegance and functionality. I hold a certification in Frontend Development from <a href="https://www.altschoolafrica.com/" target="_blank">AltSchool Africa</a>, where I honed my skills in crafting seamless and visually stunning user interfaces. Beyond coding, I enjoy writing during my free time, blending creativity and logic in all that I do.</p>
                         </div>
                         <div className="stats">
+
+                            <h1 className="fancy">Languages i use</h1>
                             <h1>Every line of code starts with a tool, here are mine and how much I vibe with them</h1>
                             <div className="stats-box">
                                 <div className="bar">
@@ -62,7 +64,7 @@ function HomePage() {
                         <main className="project-page">
                             <div className="projects-intro">
                                 <div className="proj-txt">
-                                    <h1>Projects I've Built</h1>
+                                    <h1 className="fancy">Projects I've Built</h1>
                                     <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
                                 </div>
                                 <a href="https://github.com/AdeDevs/">See More</a>
@@ -148,6 +150,29 @@ function HomePage() {
                         </main>
                     </div>
                 </main>
+                <footer>
+                    <div>
+                        <h1>
+                            Let's Connect
+                            <span>
+                                <a href="mailto:adeyemiakinyemi01@gmail.com">adeyemiakinyemi01@gmail.com</a> || &nbsp;
+                                <a href="tel:+2349076320109">+234 907 632 0109</a> || &nbsp;
+                                <a href="https://wa.me/2347025302018">+234 702 530 2018</a>
+                            </span>
+                        </h1>
+                    </div>
+                    {/* <div className="foot-links">
+                        <ul>
+                            <li className="li-first">email <address></address></li>
+                            <li><a href="mailto:adeyemiakinyemi01@gmail.com">adeyemiakinyemi01@gmail.com</a></li>
+                        </ul>
+                        <ul>
+                            <li className="li-first">phone number</li>
+                            <li><a href="tel:+2349076320109">+234 907 632 0109</a></li>
+                            <li><a href="https://wa.me/2347025302018">+234 702 530 2018</a></li>
+                        </ul>
+                    </div> */}
+                </footer>
                 {/* <AboutPage />
                 <ProjectsPage /> */}
             </div>

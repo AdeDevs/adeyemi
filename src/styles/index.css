@@ -25,6 +25,7 @@
     display: inline-flex;
     height: 50px;
     background-color: #111111dc;
+    border-bottom: 1px solid #777;
     backdrop-filter: blur(10px);
     justify-content: space-between;
     width: 100%;

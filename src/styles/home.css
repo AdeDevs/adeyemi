@@ -34,6 +34,7 @@
     position: fixed;
     right: 20px;
     bottom: 15px;
+    z-index: 999;
 }
 .socials a {
     color: inherit;
@@ -79,14 +80,14 @@
 .hero .me {
     height: 300px;
     width: 200px;
-    background-image: url(../assets/hero.jpeg);
+    background-image: url(../assets/ade.jpg);
     background-position: center;
     background-size: cover;
     border-radius: 10px;
     align-self: flex-end;
 }
 
-.hero h1 {
+.big {
     text-transform: uppercase;
     font-size: 4em;
     line-height: 100%;
@@ -99,6 +100,45 @@
     width: 100%;
     font-family: 'Courier New', Courier, monospace, sans-serif;
     font-size: 15px;
+}
+
+footer {
+    border-top: 1px solid #777;
+    padding: 40px 30px;
+    padding-bottom: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h1 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+}
+footer h1 span {
+    font-size: 12px;
+    text-transform: lowercase;
+}
+
+footer a {
+    font-family: inherit;
+    color: #777777;
+    text-decoration: underline 0.12em #777;
+    font-weight: 400;
+    text-underline-offset: 0.1em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;;
+}
+footer a:hover {
+    color: #f2f2f2;
+    text-decoration-color: #f2f2f2;
+    text-underline-offset: 0.4em;
 }
 
 @media (max-width: 650px) {

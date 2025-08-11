@@ -42,8 +42,9 @@
 .stats p {
     font-size: 12px;
 }
-.stats h1 {
-    margin-top: 20px;
+.stats .fancy {
+    margin: 15px 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 .stats-box {
