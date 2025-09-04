@@ -9,12 +9,12 @@ function App() {
   return (
     <div>
       <NavPage />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
-      </Routes>
+      </Routes> */}
     </div>
   )
 }

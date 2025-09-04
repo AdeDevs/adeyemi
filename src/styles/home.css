@@ -5,7 +5,13 @@
     margin: 0 auto;
     position: relative;
     color: #fff;
+    background: #111;
     scroll-behavior: smooth;
+    transition: all .3s ease-in-out;
+}
+.home.active {
+    background-color: #f2f2f2;
+    color: #000;
 }
 
 /* .number {
@@ -36,6 +42,9 @@
     bottom: 15px;
     z-index: 999;
 }
+.socials.active {
+    color: #fff;
+}
 .socials a {
     color: inherit;
     text-decoration: none;
@@ -50,11 +59,19 @@
     align-items: center;
     transition: .3s ease-in-out;
 }
-
+.socials.active li {
+    background-color: #000;
+    border: 2px solid #fff;
+}
 .socials li:hover {
     border: 2px solid #fff;
     background-color: transparent;
     color: #fff;
+}
+.socials.active li:hover {
+    border-color: #000;
+    color: #000;
+    background-color: #fff;
 }
 
 .home .home-page {
@@ -139,6 +156,10 @@ footer a:hover {
     color: #f2f2f2;
     text-decoration-color: #f2f2f2;
     text-underline-offset: 0.4em;
+}
+.home.active footer a:hover {
+    color: #000;
+    text-decoration-color: #000;
 }
 
 @media (max-width: 650px) {

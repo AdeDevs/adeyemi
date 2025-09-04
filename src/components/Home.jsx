@@ -1,6 +1,3 @@
-import AboutPage from "./About";
-import ProjectsPage from "./Projects";
-
 function HomePage() {
     return (
         <>
@@ -161,20 +158,8 @@ function HomePage() {
                             </span>
                         </h1>
                     </div>
-                    {/* <div className="foot-links">
-                        <ul>
-                            <li className="li-first">email <address></address></li>
-                            <li><a href="mailto:adeyemiakinyemi01@gmail.com">adeyemiakinyemi01@gmail.com</a></li>
-                        </ul>
-                        <ul>
-                            <li className="li-first">phone number</li>
-                            <li><a href="tel:+2349076320109">+234 907 632 0109</a></li>
-                            <li><a href="https://wa.me/2347025302018">+234 702 530 2018</a></li>
-                        </ul>
-                    </div> */}
+                    
                 </footer>
-                {/* <AboutPage />
-                <ProjectsPage /> */}
             </div>
             <ul className="socials">
                 <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>

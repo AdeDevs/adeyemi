@@ -3,7 +3,6 @@
     width: 100%;
     margin-top: 70px;
     box-sizing: border-box;
-    color: #fff;
 }
 .projects a {
     color: inherit;
@@ -35,7 +34,7 @@
     width: 80%;
     font-family: 'Courier New', Courier, monospace; 
 }
-.projects-intro a {
+.home .projects-intro a {
     align-self: flex-end;
     border: 2px solid #777;
     box-sizing: border-box;
@@ -53,6 +52,11 @@
 .projects-intro a:hover {
     background-color: #f2f2f2;
     color: #000;
+}
+.home.active .projects-intro a:hover {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
 }
 .projects-box {
     width: 100%;
@@ -87,8 +91,11 @@
     transition: all .3s ease-in-out;
 }
 .project-img:hover {
-    box-shadow: 3px 3px 1px #22d66c;
+    box-shadow: 4px 4px 2px #22d66c;
     z-index: 800;
+}
+.home.active .project-img:hover {
+    box-shadow: 4px 4px 2px #000000;
 }
 .card-one .project-img {
     background-image: url(../assets/foodspring.png);
@@ -133,26 +140,27 @@
 .project-card h1 {
     font-size: 1.5em;
     font-weight: 600;
-    color: #f2f2f2;
     cursor: pointer;
     text-transform: lowercase;
 }
 .project-card h1 a {
     text-decoration: 2px underline #777;
-    color: #fff;
     text-underline-offset: 1px;
     transition: .3s ease-in-out;
 }
 .project-card h1 a:hover {
-    text-decoration: 2px underline #f2f2f2;
+    text-decoration: 2px underline inherit;
     text-underline-offset: 7px;
 }
 .project-card p {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Courier New', Courier, monospace;
-    color: #c4c4c4;
+    color: #b3b3b3;
     text-align: right;
+}
+.home.active .project-card p {
+    color: #333;
 }
 
 @media (max-width: 650px) {

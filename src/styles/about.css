@@ -2,7 +2,6 @@
     font-family: 'Courier New', Courier, monospace, sans-serif;
     width: 100%;
     box-sizing: border-box;
-    color: #fff;
 }
 
 .intro h1 {
@@ -62,6 +61,10 @@
     border-radius: 30px;
     border: 1px solid #22d66c;
 }
+.home.active .stats-box .bar {
+    background-color: #00214400;
+    border: 1px solid #2288d6;
+}
 
 .bar div {
     width: 90%;
@@ -71,6 +74,9 @@
     border-radius: 30px;
     animation: progress 0.7s ease-in-out forwards;
     opacity: 0;
+}
+.home.active .bar div {
+    background-color: #2288d6;
 }
 .bar .js {
     width: 50%;
