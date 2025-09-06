@@ -109,9 +109,6 @@
     transition: all .3s ease-in-out;
     box-sizing: border-box;
 }
-.home .contact-box textarea {
-    color: #000;
-}
 .contact-box textarea::placeholder {
     text-transform: capitalize;
     transition: .3s ease-in-out;
@@ -123,8 +120,12 @@
     color: #fff;
 }
 
+.home.active .contact-box textarea {
+    color: #000;
+}
 .home.active .contact-box textarea:hover, .home.active .contact-box textarea:focus {
     border: 2px solid #000;
+    color: #000;
 }
 .home.active .contact-box textarea:hover::placeholder {
     color: #000;
