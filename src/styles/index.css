@@ -115,7 +115,7 @@
     flex-direction: column;
     gap: 20px;
     background-color: #f4f4f4;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -178,7 +178,7 @@
     max-width: 0;
     background-color: #00000080;
     backdrop-filter: blur(40px);
-    z-index: 999;
+    z-index: 990;
     transition: .2s ease-in-out;
   }
   .overlay.show {
