@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function HomePage() {
     const [menuActive, isMenuActive] = useState(false)
-    const [isTheme, setIsTheme] = useState(false)
+    const [isTheme, setIsTheme] = useState(() => {
+        const storedTheme = localStorage.getItem("lulu");
+        return storedTheme ? JSON.parse(storedTheme) : false;
+    });
+
+    useEffect(() => {
+        localStorage.setItem("lulu", JSON.stringify(isTheme));
+    }, [isTheme]);
+
+    const toggleTheme = () => {
+        setIsTheme(prev => !prev);
+    };
+
     const toggleMenu = () => {
         isMenuActive(!menuActive)
     }
-    const toggleTheme = () => {
-        setIsTheme(!isTheme)
-    }
+
     return (
         <div>
             <div className="navigation">
@@ -143,7 +153,7 @@ function HomePage() {
                                     <div className="project-info">
                                         <h1><a href="https://joltbyade.vercel.app/" target="_blank">jolt</a></h1>
                                         <p>
-                                        A modern, responsive e-commerce concept showcasing winter fashion. Built with a clean UI, smooth browsing experience, and attention to usability and design detail.
+                                            A modern, responsive e-commerce concept showcasing winter fashion. Built with a clean UI, smooth browsing experience, and attention to usability and design detail.
                                         </p>
                                     </div>
                                 </section>

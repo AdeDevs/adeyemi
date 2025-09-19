@@ -92,7 +92,7 @@
 }
 
 .home.active .contact-box input:hover, .home.active .contact-box input:focus {
-    border: 2px solid #000;
+    border: 2px solid #2288d6;
 }
 .home.active .contact-box input:hover::placeholder {
     color: #000;
@@ -124,7 +124,7 @@
     color: #000;
 }
 .home.active .contact-box textarea:hover, .home.active .contact-box textarea:focus {
-    border: 2px solid #000;
+    border: 2px solid #2288d6;
     color: #000;
 }
 .home.active .contact-box textarea:hover::placeholder {
