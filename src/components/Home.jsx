@@ -1,7 +1,48 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 function HomePage() {
+    const [menuActive, isMenuActive] = useState(false)
+    const [isTheme, setIsTheme] = useState(false)
+    const toggleMenu = () => {
+        isMenuActive(!menuActive)
+    }
+    const toggleTheme = () => {
+        setIsTheme(!isTheme)
+    }
     return (
-        <>
-            <div className="home">
+        <div>
+            <div className="navigation">
+                <nav className={`nav-bar ${isTheme ? "active" : ""}`}>
+                    <NavLink className="adedevs" to="/"> <h1>AdeDevs</h1> </NavLink>
+                    <ul className={`desk-menu ${isTheme ? "active" : ""}`}>
+                        <a href="#about"> <li>about</li> </a>
+                        <a href="#projects"> <li>projects</li> </a>
+                        <a href="#contact"> <li>contact</li> </a>
+                        <a href="resume.pdf" download={true}><li>my resume</li></a>
+                        <button className={`toggle ${isTheme ? "active" : ""}`} onClick={toggleTheme}><ion-icon name="toggle"></ion-icon></button>
+                    </ul>
+                    <div className="desk-extras">
+                        <span className="toggle-menu" onClick={toggleMenu}>
+                            <ion-icon name="menu-outline" />
+                        </span>
+                        <button className={`toggle ${isTheme ? "active" : ""}`} onClick={toggleTheme}><ion-icon name="toggle"></ion-icon></button>
+                    </div>
+
+                    <div className={`overlay ${menuActive ? 'show' : ""}`} onClick={toggleMenu}></div>
+                    <ul className={`hamburger-menu ${menuActive ? 'show' : ""}`}>
+                        <span className="toggle-menu">
+                            <ion-icon name="close-outline" onClick={toggleMenu} />
+                        </span>
+                        <a href="#about" onClick={toggleMenu}> <li>about</li> </a>
+                        <a href="#projects" onClick={toggleMenu}> <li>projects</li> </a>
+                        <a href="#contact" onClick={toggleMenu}> <li>contact</li> </a>
+                        <a href="resume.pdf" download={true} onClick={toggleMenu}><li>my resume</li></a>
+                    </ul>
+                </nav>
+
+            </div>
+            <div className={`home ${isTheme ? "active" : ""}`}>
                 <main className="home-page">
                     <div className="hero">
                         <div className="txt">
@@ -97,12 +138,12 @@ function HomePage() {
                                     </div>
                                 </section>
                                 <section className="project-card card-four">
-                                    <a href="https://brookebyade.vercel.app/" target="_blank" className="project-img">
+                                    <a href="https://joltbyade.vercel.app/" target="_blank" className="project-img">
                                     </a>
                                     <div className="project-info">
-                                        <h1><a href="https://brookebyade.vercel.app/" target="_blank">brooke</a></h1>
+                                        <h1><a href="https://joltbyade.vercel.app/" target="_blank">jolt</a></h1>
                                         <p>
-                                            Landing page for a professional golfer. Designed to be minimal and classy. Built with React and CSS, with a strong focus on spacing and typography.
+                                        A modern, responsive e-commerce concept showcasing winter fashion. Built with a clean UI, smooth browsing experience, and attention to usability and design detail.
                                         </p>
                                     </div>
                                 </section>
@@ -117,12 +158,12 @@ function HomePage() {
                                     </div>
                                 </section>
                                 <section className="project-card card-six">
-                                    <a href="https://dreamspacebyade.vercel.app/" target="_blank" className="project-img">
+                                    <a href="https://journalbyade.vercel.app/" target="_blank" className="project-img">
                                     </a>
                                     <div className="project-info">
-                                        <h1><a href="https://dreamspacebyade.vercel.app/" target="_blank">dreamspace</a></h1>
+                                        <h1><a href="https://journalbyade.vercel.app/" target="_blank">journal</a></h1>
                                         <p>
-                                            A sleek, modern homepage for an interior design studio. Built using React and CSS Grid, focused on elegance, balance, and modern layout techniques.
+                                            A sleek and simple journal with CRUD built with reactjs, it utilizes localStorage to store the journal entries and it persists on reload.
                                         </p>
                                     </div>
                                 </section>
@@ -158,15 +199,15 @@ function HomePage() {
                             </span>
                         </h1>
                     </div>
-                    
+
                 </footer>
             </div>
-            <ul className="socials">
+            <ul className={`socials ${isTheme ? "active" : ""}`}>
                 <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
                 <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
                 <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
             </ul>
-        </>
+        </div>
     )
 }
 

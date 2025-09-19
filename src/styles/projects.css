@@ -110,13 +110,16 @@
     background-image: url(../assets/gallery.png);
 }
 .card-four .project-img {
-    background-image: url(../assets/brooke.png);
+    background-image: url(../assets/jolt.png);
 }
 .card-five .project-img {
     background-image: url(../assets/wordcounter.png);
 }
 .card-six .project-img {
-    background-image: url(../assets/dreamspace.png);
+    background-image: url(../assets/journal.png);
+}
+.card-seven .project-img {
+    background-image: url(../assets/jolt.png);
 }
 .project-img::before {
     content: "";
@@ -189,13 +192,13 @@
         background-image: url(../assets/gallery-mob.png);
     }
     .card-four .project-img {
-        background-image: url(../assets/brooke-mob.png);
+        background-image: url(../assets/jolt-mob.png);
     }
     .card-five .project-img {
         background-image: url(../assets/wordcounter-mob.png);
     }
     .card-six .project-img {
-        background-image: url(../assets/dreamspace-mob.png);
+        background-image: url(../assets/journal-mob.png);
     }
 }
 
