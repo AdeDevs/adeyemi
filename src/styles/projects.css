@@ -110,7 +110,7 @@
     background-image: url(../assets/gallery.png);
 }
 .card-four .project-img {
-    background-image: url(../assets/jolt.png);
+    background-image: url(../assets/spotify.png);
 }
 .card-five .project-img {
     background-image: url(../assets/wordcounter.png);
@@ -139,11 +139,15 @@
 
 
 .project-card .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     box-sizing: border-box;
 }
 .project-card h1 {
     font-size: 1.5em;
     font-weight: 600;
+    line-height: 100%;
     cursor: pointer;
     text-transform: lowercase;
 }
@@ -152,9 +156,27 @@
     text-underline-offset: 1px;
     transition: .3s ease-in-out;
 }
+.project-card .git {
+    text-decoration: 2px underline;
+    font-family: 'Courier New', Courier, monospace;
+    color: #22d66d9a;
+    font-weight: 500;
+    text-underline-offset: 1px;
+    width: fit-content;
+    align-self: flex-end;
+    transition: .3s ease-in-out;
+    &:hover {
+        text-decoration: 2px underline inherit;
+        text-underline-offset: 5px;
+        color: #22d66c;
+    }
+}
 .project-card h1 a:hover {
     text-decoration: 2px underline inherit;
     text-underline-offset: 7px;
+}
+.home.active .project-card .git {
+    color: #17c500;
 }
 .project-card p {
     font-weight: 300;
@@ -192,7 +214,7 @@
         background-image: url(../assets/gallery-mob.png);
     }
     .card-four .project-img {
-        background-image: url(../assets/jolt-mob.png);
+        background-image: url(../assets/spotify-mob.png);
     }
     .card-five .project-img {
         background-image: url(../assets/wordcounter-mob.png);
