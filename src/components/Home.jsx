@@ -125,7 +125,7 @@ function HomePage() {
                                         <p>
                                             A clean, responsive landing page for a premium nutrition brand. Built with React and styled with plain CSS, focused on layout, typography, and mobile-first design.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/foodspring.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                                 <section className="project-card card-two">
@@ -136,7 +136,7 @@ function HomePage() {
                                         <p>
                                             A visually bold homepage concept inspired by modern fashion sites. Built using React with subtle animation touches from Framer Motion to enhance movement and flow.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/rotate.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                                 <section className="project-card card-three">
@@ -147,7 +147,7 @@ function HomePage() {
                                         <p>
                                             A minimal and elegant image gallery built with React. Focused on clean layout, strong visual balance, and simple presentation.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/reseda.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                                 <section className="project-card card-four">
@@ -158,7 +158,7 @@ function HomePage() {
                                         <p>
                                             An interactive web app that lets users search and explore artists on Spotify. Built with React and the Spotify API, it features a clean, responsive design, dynamic data fetching, and direct Spotify links for albums and top tracks.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/spotify.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                                 <section className="project-card card-five">
@@ -169,7 +169,7 @@ function HomePage() {
                                         <p>
                                             A mini tool that analyzes text in real time — tracking word, character, and sentence count. Built with React, using controlled input and basic text logic.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/wordcounter.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                                 <section className="project-card card-six">
@@ -180,7 +180,7 @@ function HomePage() {
                                         <p>
                                             A sleek and simple journal with CRUD built with reactjs, it utilizes localStorage to store the journal entries and it persists on reload.
                                         </p>
-                                        <a className="git" href="#" target="_blank">GitHub Repo</a>
+                                        <a className="git" href="https://github.com/AdeDevs/simple-journal.git" target="_blank">GitHub Repo</a>
                                     </div>
                                 </section>
                             </div>
