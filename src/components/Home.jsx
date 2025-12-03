@@ -157,10 +157,10 @@ function HomePage() {
                                         </div>
                                     </section>
                                     <section className="project-card card-four">
-                                        <a href="https://joltbyade.vercel.app/" target="_blank" className="project-img">
+                                        <a href="https://spotifybyade.vercel.app/" target="_blank" className="project-img">
                                         </a>
                                         <div className="project-info">
-                                            <h1><a href="https://joltbyade.vercel.app/" target="_blank">artist finder</a></h1>
+                                            <h1><a href="https://spotifybyade.vercel.app/" target="_blank">artist finder</a></h1>
                                             <p>
                                                 An interactive web app that lets users search and explore artists on Spotify. Built with React and the Spotify API, it features a clean, responsive design, dynamic data fetching, and direct Spotify links for albums and top tracks.
                                             </p>
