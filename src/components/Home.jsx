@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Reveal from "./Reveal";
+import MotionReveal from "./MotionReveal";
 
 function HomePage() {
     const [menuActive, isMenuActive] = useState(false)
@@ -113,7 +114,7 @@ function HomePage() {
                             </div>
                         </div>
                     </Reveal>
-                    <Reveal>
+                    {/* <MotionReveal type="scale"> */}
                         <div className="projects" id="projects">
                             <main className="project-page">
                                 <div className="projects-intro">
@@ -192,7 +193,7 @@ function HomePage() {
                                 </div>
                             </main>
                         </div>
-                    </Reveal>
+                        {/* </MotionReveal> */}
                     <Reveal>
                         <div className="contact" id="contact">
                             <main>
