@@ -26,3 +26,45 @@
     align-items: center;
     transition: .3s ease-in-out;
 }
+
+{/* <div className="stats">
+
+                            <h1 className="fancy">Languages i use</h1>
+                            <h1>Every line of code starts with a tool, here are mine and how much I vibe with them</h1>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="width"></div>
+                                </div>
+                                <p>HTML</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="js"></div>
+                                </div>
+                                <p>JAVASCRIPT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="ts"></div>
+                                </div>
+                                <p>TYPESCRIPT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="css"></div>
+                                </div>
+                                <p>CSS</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="react"></div>
+                                </div>
+                                <p>REACT</p>
+                            </div>
+                            <div className="stats-box">
+                                <div className="bar">
+                                    <div className="vue"></div>
+                                </div>
+                                <p>VUE</p>
+                            </div>
+                        </div> */}

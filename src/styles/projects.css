@@ -51,8 +51,9 @@
     transition: all .3s ease-in-out;
 }
 .projects-intro a:hover {
-    background-color: #f2f2f2;
-    color: #000;
+    background-color: #2288d6;
+    color: #fff;
+    border-color: #fff;
 }
 .home.active .projects-intro a:hover {
     background-color: #000;
@@ -82,6 +83,7 @@
     box-sizing: border-box;
     height: fit-content;
 }
+
 .project-card .project-img {
     height: 300px;
     background-color: aqua;
@@ -92,11 +94,25 @@
     transition: all .3s ease-in-out;
 }
 .project-img:hover {
-    box-shadow: 4px 4px 2px #22d66c;
+    box-shadow: 3px 4px 4px #2288d6a0;
     z-index: 800;
+    transform: translateY(-8px);
+  
 }
 .home.active .project-img:hover {
-    box-shadow: 4px 4px 2px #000000;
+    box-shadow: 3 4px 4px #000000;
+    animation-play-state: paused;
+}
+@keyframes bounce {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
 .card-one .project-img {
     background-image: url(../assets/foodspring.png);
@@ -128,7 +144,7 @@
     border-radius: 5px;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 99.4%;
     background-color: #001a2953;
     border: 2px solid transparent;
     transition: .3s ease-in-out;
@@ -156,10 +172,14 @@
     text-underline-offset: 1px;
     transition: .3s ease-in-out;
 }
+.home.active .project-card h1 a:hover {
+    color: #2288d6;
+    text-decoration-color: #2288d6;
+}
 .project-card .git {
     text-decoration: 2px underline;
     font-family: 'Courier New', Courier, monospace;
-    color: #22d66d9a;
+    color: #2288d6a4;
     font-weight: 500;
     text-underline-offset: 1px;
     width: fit-content;
@@ -168,7 +188,7 @@
     &:hover {
         text-decoration: 2px underline inherit;
         text-underline-offset: 5px;
-        color: #22d66c;
+        color: #2288d6;
     }
 }
 .project-card h1 a:hover {
@@ -176,7 +196,7 @@
     text-underline-offset: 7px;
 }
 .home.active .project-card .git {
-    color: #17c500;
+    color: #2288d6;
 }
 .project-card p {
     font-weight: 300;

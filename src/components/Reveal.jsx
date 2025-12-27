@@ -1,30 +1,41 @@
 import { motion } from "framer-motion";
+import { Children } from "react";
 
-export default function Reveal({ children, direction = "left", delay = 0 }) {
-  const variants = {
-    hidden: {
-      opacity: 0,
-      x: direction === "left" ? -60 : 60, // offset from the side
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        delay,
-        ease: "easeOut",
-      },
-    },
-  };
+const variants = {
+  fadeUp: {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fadeLeft: {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 },
+  },
+  fadeRight: {
+    hidden: { opacity: 0, x: 40 },
+    visible: { opacity: 1, x: 0 },
+  },
+  scale: {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 },
+  },
+};
+
+export default function Reveal({
+  children,
+  type = "fadeUp",
+  delay = 0,
+}) {
+  const child = Children.only(children);
+  const MotionComponent = motion(child.type);
 
   return (
-    <motion.div
-      variants={variants}
+    <MotionComponent
+      {...child.props}
+      variants={variants[type]}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      {children}
-    </motion.div>
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut", delay }}
+    />
   );
 }

@@ -59,7 +59,7 @@
     background-color: #000;
     box-sizing: border-box;
     border-radius: 30px;
-    border: 1px solid #22d66c;
+    border: 1px solid #5b5b5b;
 }
 .home.active .stats-box .bar {
     background-color: #00214400;
@@ -68,20 +68,20 @@
 
 .bar div {
     width: 90%;
-    background-color: #22d66c;
+    background-color: #2288d6;
     height: 100%;
     box-sizing: border-box;
     border-radius: 30px;
-    animation: progress 0.7s ease-in-out forwards;
+    animation: progress 2s ease-in-out forwards;
     opacity: 0;
 }
 .home.active .bar div {
     background-color: #2288d6;
 }
-.bar .js {
+.bar .javascript {
     width: 50%;
 }
-.bar .ts {
+.bar .typescript {
     width: 20%;
 }
 .bar .css {
