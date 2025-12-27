@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Reveal from "./Reveal";
+import { motion } from "framer-motion";
+
 
 function HomePage() {
     const [menuActive, isMenuActive] = useState(false)
@@ -20,6 +22,31 @@ function HomePage() {
     const toggleMenu = () => {
         isMenuActive(!menuActive)
     }
+    const projectsContainer = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const projectItem = {
+        hidden: {
+            opacity: 0,
+            y: 30,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut",
+            },
+        },
+    };
+
 
     return (
         <div>
@@ -121,75 +148,78 @@ function HomePage() {
                                     <a href="https://github.com/AdeDevs/">See More</a>
                                 </div>
                             </Reveal>
-                            <Reveal type="fadeUp">
-                            <div className="projects-box">
-                                <section className="project-card card-one">
-                                    <a href="https://foodspringbyade.vercel.app/" target="_blank" className="project-img"></a>
-                                    <div className="project-info">
-                                        <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
-                                        <p>
-                                            A clean, responsive landing page for a premium nutrition brand. Built with React and styled with plain CSS, focused on layout, typography, and mobile-first design.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/foodspring.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                                <section className="project-card card-two">
-                                    <a href="https://rotatebyade.vercel.app/" target="_blank" className="project-img">
-                                    </a>
-                                    <div className="project-info">
-                                        <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
-                                        <p>
-                                            A visually bold homepage concept inspired by modern fashion sites. Built using React with subtle animation touches from Framer Motion to enhance movement and flow.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/rotate.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                                <section className="project-card card-three">
-                                    <a href="https://gallerybyade.vercel.app/" target="_blank" className="project-img">
-                                    </a>
-                                    <div className="project-info">
-                                        <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
-                                        <p>
-                                            A minimal and elegant image gallery built with React. Focused on clean layout, strong visual balance, and simple presentation.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/reseda.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                                <section className="project-card card-four">
-                                    <a href="https://spotifybyade.vercel.app/" target="_blank" className="project-img">
-                                    </a>
-                                    <div className="project-info">
-                                        <h1><a href="https://spotifybyade.vercel.app/" target="_blank">artist finder</a></h1>
-                                        <p>
-                                            An interactive web app that lets users search and explore artists on Spotify. Built with React and the Spotify API, it features a clean, responsive design, dynamic data fetching, and direct Spotify links for albums and top tracks.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/spotify.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                                <section className="project-card card-five">
-                                    <a href="https://wordcounterbyade.vercel.app/" target="_blank" className="project-img">
-                                    </a>
-                                    <div className="project-info">
-                                        <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
-                                        <p>
-                                            A mini tool that analyzes text in real time — tracking word, character, and sentence count. Built with React, using controlled input and basic text logic.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/wordcounter.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                                <section className="project-card card-six">
-                                    <a href="https://journalbyade.vercel.app/" target="_blank" className="project-img">
-                                    </a>
-                                    <div className="project-info">
-                                        <h1><a href="https://journalbyade.vercel.app/" target="_blank">journal</a></h1>
-                                        <p>
-                                            A sleek and simple journal with CRUD built with reactjs, it utilizes localStorage to store the journal entries and it persists on reload.
-                                        </p>
-                                        <a className="git" href="https://github.com/AdeDevs/simple-journal.git" target="_blank">GitHub Repo</a>
-                                    </div>
-                                </section>
-                            </div>
-                            </Reveal>
+                            {/* <Reveal type="fadeUp"> */}
+                                <motion.div className="projects-box" variants={projectsContainer}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}>
+                                    <motion.section className="project-card card-one" variants={projectItem}>
+                                        <a href="https://foodspringbyade.vercel.app/" target="_blank" className="project-img"></a>
+                                        <div className="project-info">
+                                            <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
+                                            <p>
+                                                A clean, responsive landing page for a premium nutrition brand. Built with React and styled with plain CSS, focused on layout, typography, and mobile-first design.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/foodspring.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                    <motion.section className="project-card card-two" variants={projectItem}>
+                                        <a href="https://rotatebyade.vercel.app/" target="_blank" className="project-img">
+                                        </a>
+                                        <div className="project-info">
+                                            <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
+                                            <p>
+                                                A visually bold homepage concept inspired by modern fashion sites. Built using React with subtle animation touches from Framer Motion to enhance movement and flow.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/rotate.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                    <motion.section className="project-card card-three" variants={projectItem}>
+                                        <a href="https://gallerybyade.vercel.app/" target="_blank" className="project-img">
+                                        </a>
+                                        <div className="project-info">
+                                            <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
+                                            <p>
+                                                A minimal and elegant image gallery built with React. Focused on clean layout, strong visual balance, and simple presentation.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/reseda.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                    <motion.section className="project-card card-four" variants={projectItem}>
+                                        <a href="https://spotifybyade.vercel.app/" target="_blank" className="project-img">
+                                        </a>
+                                        <div className="project-info">
+                                            <h1><a href="https://spotifybyade.vercel.app/" target="_blank">artist finder</a></h1>
+                                            <p>
+                                                An interactive web app that lets users search and explore artists on Spotify. Built with React and the Spotify API, it features a clean, responsive design, dynamic data fetching, and direct Spotify links for albums and top tracks.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/spotify.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                    <motion.section className="project-card card-five" variants={projectItem}>
+                                        <a href="https://wordcounterbyade.vercel.app/" target="_blank" className="project-img">
+                                        </a>
+                                        <div className="project-info">
+                                            <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
+                                            <p>
+                                                A mini tool that analyzes text in real time — tracking word, character, and sentence count. Built with React, using controlled input and basic text logic.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/wordcounter.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                    <motion.section className="project-card card-six" variants={projectItem}>
+                                        <a href="https://journalbyade.vercel.app/" target="_blank" className="project-img">
+                                        </a>
+                                        <div className="project-info">
+                                            <h1><a href="https://journalbyade.vercel.app/" target="_blank">journal</a></h1>
+                                            <p>
+                                                A sleek and simple journal with CRUD built with reactjs, it utilizes localStorage to store the journal entries and it persists on reload.
+                                            </p>
+                                            <a className="git" href="https://github.com/AdeDevs/simple-journal.git" target="_blank">GitHub Repo</a>
+                                        </div>
+                                    </motion.section>
+                                </motion.div>
+                            {/* </Reveal> */}
                         </main>
                     </div>
                     <div className="contact" id="contact">
