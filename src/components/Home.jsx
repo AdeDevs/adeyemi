@@ -1,272 +1,92 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import Reveal from "./Reveal";
-import { motion } from "framer-motion";
+import PageLoader from "./PageLoader";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import AboutSection from "./AboutSection";
+import ServicesSection from "./ServicesSection";
+import ProjectsSection from "./ProjectsSection";
+import ContactSection from "./ContactSection";
+import Footer from "./Footer";
+import SocialDock from "./SocialDock";
 
+export default function HomePage() {
+  const [isTheme, setIsTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("lulu");
+    // false = Dark Mode (default engineering look), true = Light Mode
+    return storedTheme ? JSON.parse(storedTheme) : false;
+  });
 
-function HomePage() {
-    const [menuActive, isMenuActive] = useState(false)
-    const [isTheme, setIsTheme] = useState(() => {
-        const storedTheme = localStorage.getItem("lulu");
-        return storedTheme ? JSON.parse(storedTheme) : false;
-    });
+  const [contactPrefill, setContactPrefill] = useState({
+    subject: "",
+    message: "",
+  });
 
-    useEffect(() => {
-        localStorage.setItem("lulu", JSON.stringify(isTheme));
-    }, [isTheme]);
-
-    const toggleTheme = () => {
-        setIsTheme(prev => !prev);
-    };
-
-    const toggleMenu = () => {
-        isMenuActive(!menuActive)
+  useEffect(() => {
+    localStorage.setItem("lulu", JSON.stringify(isTheme));
+    if (!isTheme) {
+      document.documentElement.classList.add("dark");
+      document.body.style.backgroundColor = "#090b0e";
+      document.body.style.color = "#f1f5f9";
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.body.style.backgroundColor = "#fafafa";
+      document.body.style.color = "#0f172a";
     }
-    const projectsContainer = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.1,
-            },
-        },
-    };
+  }, [isTheme]);
 
-    const projectItem = {
-        hidden: {
-            opacity: 0,
-            y: 30,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                ease: "easeOut",
-            },
-        },
-    };
+  const toggleTheme = () => {
+    setIsTheme((prev) => !prev);
+  };
 
+  const handleSelectService = ({ subject, message }) => {
+    setContactPrefill({ subject, message });
+    // Smoothly scroll directly to the contact form on both mobile and desktop
+    setTimeout(() => {
+      const formElem = document.getElementById("portfolio-contact-form");
+      if (formElem) {
+        formElem.scrollIntoView({ behavior: "smooth", block: "center" });
+        const nameInput = document.getElementById("contact-name");
+        if (nameInput) {
+          nameInput.focus({ preventScroll: true });
+        }
+      } else {
+        const contactElem = document.getElementById("contact");
+        if (contactElem) {
+          contactElem.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 50);
+  };
 
-    return (
-        <div>
-            <div className="navigation">
-                <nav className={`nav-bar ${isTheme ? "active" : ""}`}>
-                    <NavLink className="adedevs" to="/"> <h1>AdeDevs</h1> </NavLink>
-                    <ul className={`desk-menu ${isTheme ? "active" : ""}`}>
-                        <a href="#about"> <li>about</li> </a>
-                        <a href="#projects"> <li>projects</li> </a>
-                        <a href="#contact"> <li>contact</li> </a>
-                        <a href="resume.pdf" download={true}><li>my resume</li></a>
-                        <button className={`toggle ${isTheme ? "active" : ""}`} onClick={toggleTheme}><ion-icon name="toggle"></ion-icon></button>
-                    </ul>
-                    <div className="desk-extras">
-                        <span className="toggle-menu" onClick={toggleMenu}>
-                            <ion-icon name="menu-outline" />
-                        </span>
-                        <button className={`toggle ${isTheme ? "active" : ""}`} onClick={toggleTheme}><ion-icon name="toggle"></ion-icon></button>
-                    </div>
+  return (
+    <div
+      id="portfolio-root"
+      className={`min-h-screen w-full transition-colors duration-200 ${
+        isTheme
+          ? "bg-[#fafafa] text-neutral-900 tech-grid-light"
+          : "bg-[#090b0e] text-neutral-100 tech-grid-dark"
+      }`}
+    >
+      {/* Technical Modernist Interactive Preloader */}
+      <PageLoader isTheme={isTheme} />
 
-                    <div className={`overlay ${menuActive ? 'show' : ""}`} onClick={toggleMenu}></div>
-                    <ul className={`hamburger-menu ${menuActive ? 'show' : ""}`}>
-                        <span className="toggle-menu">
-                            <ion-icon name="close-outline" onClick={toggleMenu} />
-                        </span>
-                        <a href="#about" onClick={toggleMenu}> <li>about</li> </a>
-                        <a href="#projects" onClick={toggleMenu}> <li>projects</li> </a>
-                        <a href="#contact" onClick={toggleMenu}> <li>contact</li> </a>
-                        <a href="resume.pdf" download={true} onClick={toggleMenu}><li>my resume</li></a>
-                    </ul>
-                </nav>
+      {/* Floating Centered Navigation */}
+      <Navbar isTheme={isTheme} toggleTheme={toggleTheme} />
 
-            </div>
-            <div className={`home ${isTheme ? "active" : ""}`}>
-                <main className="home-page">
-                    <section className="hero">
-                        <Reveal type="fadeLeft">
-                            <div className="txt">
-                                <h1 className="big">I Am Adeyemi Akinyemi</h1>
-                                <p>Frontend Developer. Check out more about me</p>
-                                <p>
-                                    Crafting clean, responsive websites with modern web tech.
-                                    Explore my work, skills, and experience below
-                                </p>
-                            </div>
-                        </Reveal>
+      {/* Main Content Sections - Using full available screen width */}
+      <main className="w-full px-4 sm:px-8 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32">
+        <Hero isTheme={isTheme} />
+        <AboutSection isTheme={isTheme} />
+        <ProjectsSection isTheme={isTheme} />
+        <ServicesSection isTheme={isTheme} onSelectService={handleSelectService} />
+        <ContactSection isTheme={isTheme} prefill={contactPrefill} />
+      </main>
 
-                        <Reveal type="fadeRight" delay={0.2}>
-                            <div className="me"></div>
-                        </Reveal>
-                    </section>
-                    <div className="about" id="about">
-                        <Reveal >
-                            <div className="intro">
-                                <p>I'm a passionate Frontend Developer who brings designs to life with elegance and functionality. I hold a certification in Frontend Development from <a href="https://www.altschoolafrica.com/" target="_blank">AltSchool Africa</a>, where I honed my skills in crafting seamless and visually stunning user interfaces. Beyond coding, I enjoy writing during my free time, blending creativity and logic in all that I do.</p>
-                            </div>
-                        </Reveal>
+      {/* Comprehensive Full-Width Footer */}
+      <Footer isTheme={isTheme} />
 
-                        <div className="stats">
-                            <Reveal delay={0.1}>
-                                <h1 className="fancy">Languages I use</h1>
-                            </Reveal>
-
-                            <Reveal delay={0.2}>
-                                <h1>
-                                    Every line of code starts with a tool, here are mine and how much
-                                    I vibe with them
-                                </h1>
-                            </Reveal>
-
-                            {/* Stats items */}
-                            {[
-                                "HTML",
-                                "JAVASCRIPT",
-                                "TYPESCRIPT",
-                                "CSS",
-                                "REACT",
-                                "VUE",
-                            ].map((skill, i) => (
-                                <Reveal key={skill} delay={0.15 + i * 0.08}>
-                                    <div className="stats-box">
-                                        <div className="bar">
-                                            <div className={skill.toLowerCase()}></div>
-                                        </div>
-                                        <p>{skill}</p>
-                                    </div>
-                                </Reveal>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="projects" id="projects">
-                        <main className="project-page">
-                            <Reveal>
-                                <div className="projects-intro">
-                                    <div className="proj-txt">
-                                        <h1 className="fancy">Projects I've Built</h1>
-                                        <p>This is a collection of some of my recent frontend and web-based projects, built with React, APIs, and a touch of curiosity.</p>
-                                    </div>
-                                    <a href="https://github.com/AdeDevs/">See More</a>
-                                </div>
-                            </Reveal>
-                            {/* <Reveal type="fadeUp"> */}
-                                <motion.div className="projects-box" variants={projectsContainer}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true }}>
-                                    <motion.section className="project-card card-one" variants={projectItem}>
-                                        <a href="https://thekazihub.vercel.app/" target="_blank" rel="noreferrer" className="project-img"></a>
-                                        <div className="project-info">
-                                            <h1><a href="https://thekazihub.vercel.app/" target="_blank" rel="noreferrer">Kazi</a></h1>
-                                            <p>
-                                                A premier artisan and professional services marketplace connecting customers with vetted local experts across neighborhoods with instant availability tracking, transparent pricing, dual-role dashboards, and real-time chat.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/kazi.git" target="_blank" rel="noreferrer">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                    <motion.section className="project-card card-two" variants={projectItem}>
-                                        <a href="https://directrent.space" target="_blank" rel="noreferrer" className="project-img">
-                                        </a>
-                                        <div className="project-info">
-                                            <h1><a href="https://directrent.space" target="_blank" rel="noreferrer">DirectRent</a></h1>
-                                            <p>
-                                                A verified digital rental marketplace connecting students and residents directly with landlords for scam-free renting — featuring verified student hostels, off-campus accommodations, upfront pricing, and zero agent stress or hidden fees.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/directrent.git" target="_blank" rel="noreferrer">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                    <motion.section className="project-card card-three" variants={projectItem}>
-                                        <a href="https://maishaimport.vercel.app/" target="_blank" rel="noreferrer" className="project-img">
-                                        </a>
-                                        <div className="project-info">
-                                            <h1><a href="https://maishaimport.vercel.app/" target="_blank" rel="noreferrer">Maisha</a></h1>
-                                            <p>
-                                                A premier private import-export fashion store in Nigeria offering curated collections of quality apparel, footwear, and accessories with seamless catalog exploration and sleek modern aesthetics.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/maisha.git" target="_blank" rel="noreferrer">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                    <motion.section className="project-card card-four" variants={projectItem}>
-                                        <a href="https://spotifybyade.vercel.app/" target="_blank" className="project-img">
-                                        </a>
-                                        <div className="project-info">
-                                            <h1><a href="https://spotifybyade.vercel.app/" target="_blank">artist finder</a></h1>
-                                            <p>
-                                                An interactive web app that lets users search and explore artists on Spotify. Built with React and the Spotify API, it features a clean, responsive design, dynamic data fetching, and direct Spotify links for albums and top tracks.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/spotify.git" target="_blank">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                    <motion.section className="project-card card-five" variants={projectItem}>
-                                        <a href="https://wordcounterbyade.vercel.app/" target="_blank" className="project-img">
-                                        </a>
-                                        <div className="project-info">
-                                            <h1><a href="https://wordcounterbyade.vercel.app/" target="_blank">word counter</a></h1>
-                                            <p>
-                                                A mini tool that analyzes text in real time — tracking word, character, and sentence count. Built with React, using controlled input and basic text logic.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/wordcounter.git" target="_blank">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                    <motion.section className="project-card card-six" variants={projectItem}>
-                                        <a href="https://journalbyade.vercel.app/" target="_blank" className="project-img">
-                                        </a>
-                                        <div className="project-info">
-                                            <h1><a href="https://journalbyade.vercel.app/" target="_blank">journal</a></h1>
-                                            <p>
-                                                A sleek and simple journal with CRUD built with reactjs, it utilizes localStorage to store the journal entries and it persists on reload.
-                                            </p>
-                                            <a className="git" href="https://github.com/AdeDevs/simple-journal.git" target="_blank">GitHub Repo</a>
-                                        </div>
-                                    </motion.section>
-                                </motion.div>
-                            {/* </Reveal> */}
-                        </main>
-                    </div>
-                    <div className="contact" id="contact">
-                        <main>
-                            <Reveal>
-                                <div className="contact-head">
-                                    <h1>contact me</h1>
-                                    <ul className="contact-info">
-                                        <li><a href="mailto:adeyemiakinyemi01@gamil.com">adeyemiakinyemi01@gmail.com</a></li>
-                                        <li><a href="tel:+2349076320109">+234 907 632 0109</a></li>
-                                    </ul>
-                                </div>
-                            </Reveal>
-                            <Reveal type="scale" delay={0.15}>
-                                <form action="https://formsubmit.co/adeyemiakinyemi01@gmail.com" method="POST" target="_blank" className="contact-box">
-                                    <input type="email" name="email" id="" placeholder="your email" required />
-                                    <input type="text" name="name" id="" placeholder="your name" required />
-                                    <textarea name="message" id="" placeholder="your message" required></textarea>
-                                    <button type="submit">Send</button>
-                                </form>
-                            </Reveal>
-                        </main>
-                    </div>
-                </main>
-                <footer>
-                    <div>
-                        <h1>
-                            Let's Connect
-                            <span>
-                                <a href="mailto:adeyemiakinyemi01@gmail.com">adeyemiakinyemi01@gmail.com</a> || &nbsp;
-                                <a href="tel:+2349076320109">+234 907 632 0109</a> || &nbsp;
-                                <a href="https://wa.me/2347025302018">+234 702 530 2018</a>
-                            </span>
-                        </h1>
-                    </div>
-
-                </footer>
-            </div>
-            <Reveal>
-                <ul className={`socials ${isTheme ? "active" : ""}`}>
-                    <a href="http://www.linkedin.com/in/adedevs" target="_blank"><li><ion-icon name="logo-linkedin"></ion-icon></li></a>
-                    <a href="https://twitter.com/adedevs" target="_blank"><li><ion-icon name="logo-twitter"></ion-icon></li></a>
-                    <a href="https://www.github.com/adedevs" target="_blank"><li><ion-icon name="logo-github"></ion-icon></li></a>
-                </ul>
-            </Reveal>
-        </div>
-    )
+      {/* Quick Access Floating Social Dock */}
+      <SocialDock isTheme={isTheme} />
+    </div>
+  );
 }
-
-export default HomePage;

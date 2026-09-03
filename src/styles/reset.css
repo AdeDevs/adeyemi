@@ -7,7 +7,6 @@ html {
     margin:0;
     padding:0;
     border:0;
-    background-color: #111;
     scroll-behavior: smooth;
   }
   
@@ -37,7 +36,6 @@ html {
   /* Line-height should always be unitless! */
   body {
     line-height: 1.5;
-    background: #000;
   }
   
   /* Tables still need 'cellspacing="0"' in the markup. */

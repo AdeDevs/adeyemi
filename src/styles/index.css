@@ -1,227 +1,151 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Young+Serif&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Comfortaa&family=DM+Serif+Display&family=Montserrat&family=Poppins:wght@700&display=swap');
+@import "tailwindcss";
 
-.navigation {
-    width: 100%;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    position: sticky;
-    top: 0;
-    color: #fff;
-    z-index: 1000;
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-.awesome {
-  background-color: red;
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
 }
 
-.navigation a {
-  text-decoration: none;
-  color: inherit;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navigation nav {
-    display: inline-flex;
-    height: 50px;
-    background-color: #11111179;
-    border-bottom: 1px solid #777;
-    backdrop-filter: blur(8px);
-    justify-content: space-between;
-    color: #fff;
-    width: 100%;
-    padding: 15px 20px;
-    box-sizing: border-box;
-    align-items: center;
-    transition: all .3s ease-in-out;
-}
-.navigation nav.active {
-  background-color: #ffffffe2;
-  color: #000;
+/* Sharp corner engineering theme variables */
+.font-mono-tech {
+  font-family: var(--font-mono);
 }
 
-.navigation .adedevs {
-    font-weight: 600;
-    font-size: 17px;
-    text-decoration: none;
-    text-underline-offset: 0.1em;
-    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+.font-sans-main {
+  font-family: var(--font-sans);
 }
 
-.navigation .adedevs:hover {
-  color: #f2f2f2;
-  text-decoration-color: #f2f2f2;
-  text-underline-offset: 0.4em; 
+/* Blueprint subtle grid overlay for light and dark */
+.tech-grid-light {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.navigation .desk-menu {
-    display: flex;
-    gap: 17px;
+.tech-grid-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.desk-menu li {
-    padding: 3px 10px;
-    padding-bottom: 0;
-    font-size: 14px;
-    font-weight: 500;
-    transition: .3s ease-in-out;
+/* Crosshair corner markers for architectural engineering feel */
+.corner-crosshair {
+  position: relative;
 }
 
-.desk-menu a {
-  color: #777777;
-  text-decoration: underline 0.12em #777;
-  text-underline-offset: 0.1em;
-  transition: text-decoration-color 300ms, text-underline-offset 300ms;
-}
-.desk-menu.active a {
-  color: #333;
-}
-
-.desk-menu a:hover {
-  color: #f2f2f2;
-  text-decoration-color: #f2f2f2;
-  text-underline-offset: 0.3em;
-}
-.desk-menu.active a:hover {
-  color: #000;
-  text-decoration-color: #000;
+.corner-crosshair::before,
+.corner-crosshair::after {
+  content: "+";
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0.45;
 }
 
-.desk-menu a.active {
-  color: #f2f2f2;
-  text-decoration: underline 0.15em #f2f2f2;
-  text-underline-offset: 0.4em;
-}
-.desk-extras {
-  display: none;
-  align-items: center;
-  flex-direction: row-reverse;
-  gap: 10px;
+.corner-crosshair::before {
+  top: -6px;
+  left: -5px;
 }
 
-.toggle-menu {
-    display: block;
+.corner-crosshair::after {
+  bottom: -6px;
+  right: -5px;
+}
+
+/* Custom crisp technical scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.6);
+}
+
+/* Explicit cursor ergonomics */
+button,
+[role="button"],
+a,
+summary,
+select {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"],
+input:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea {
+  cursor: text;
+}
+
+/* Staggered Infinite Marquee Animations */
+@keyframes marqueeScrollLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  .toggle-menu ion-icon{
-    border: 2px solid #b2b2b2;
-    border-radius: 20px;
-    vertical-align: middle;
-    display: inline-flex;
-    padding: 3px 10px;
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
-
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #f4f4f4;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 0;
-    transition: .2s ease-in-out;
-    z-index: 1000;
-}
-.hamburger-menu.show {
-    max-width: 100%;
 }
 
-.hamburger-menu .toggle-menu {
-  color: #000;
-    text-align: right;
-    display: inline-flex;
-    justify-content: right;
-    width: 100%;
-    font-size: 15px;
-    padding: 15px 10px 10px  0;
-    box-sizing: border-box;
+@keyframes marqueeScrollRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
   }
-  .hamburger-menu .toggle-menu ion-icon {
-    border: 2px solid #b2b2b2;
-    border-radius: 20px;
-    padding: 3px 10px;
+  100% {
+    transform: translate3d(0, 0, 0);
   }
-
-.hamburger-menu a {
-    border-radius: 7px;
-    margin: 0 14px;
-    font-weight: 500;
-    font-size: 13px;
-    border: 2px solid #aeaeae;
-    color: #7a7a7a;
-    padding: 5px 10px;
-    transition: .3s ease-in-out;
-    &:hover {
-      border: 2px solid #000;
-      color: #000;
-    }
-    &:nth-last-child(1) {
-        margin-bottom: 25px;
-    }
 }
 
-.hamburger-menu a.active {
-  border: 2px solid #000;
-  color: #000;
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeScrollLeft 32s linear infinite;
+  will-change: transform;
 }
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
-    max-width: 0;
-    background-color: #00000080;
-    backdrop-filter: blur(40px);
-    z-index: 990;
-    transition: .2s ease-in-out;
-  }
-  .overlay.show {
-    max-width: 130vw;
-  }
-  .toggle {
-    border: none;
-    padding: 0;
-    display: flex;
-    font-size: 30px;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    transform: rotate(180deg);
-}
-.toggle.active {
-    color: #000;
-    transform: rotate(360deg);
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeScrollRight 36s linear infinite;
+  will-change: transform;
 }
 
-  @media (max-width: 700px) {
-    .navigation .desk-menu {
-      display: none;
-    }
-    .desk-extras {
-      display: flex;
-    }
-    .navigation nav {
-      padding: 30px 10px;
-    }
-    .toggle {
-      font-size: 37px;
-    }
-  }
-  
-  @media (min-width:701px) {
-    .hamburger-menu, .overlay {
-      display: none;
-    }
-    nav .desk-menu, .contact {
-      display: inherit;
-    }
-    .toggle-menu {
-      display: none;
-    }
-  }
+.pause-on-hover:hover .animate-marquee-left,
+.pause-on-hover:hover .animate-marquee-right,
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
