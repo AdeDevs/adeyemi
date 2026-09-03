@@ -97,7 +97,7 @@
 .hero .me {
     height: 300px;
     width: 200px;
-    background-image: url(../assets/ade.jpg);
+    background-image: url(/yemi.png);
     background-position: center;
     background-size: cover;
     border-radius: 10px;

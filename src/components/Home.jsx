@@ -154,35 +154,35 @@ function HomePage() {
                                     whileInView="visible"
                                     viewport={{ once: true }}>
                                     <motion.section className="project-card card-one" variants={projectItem}>
-                                        <a href="https://foodspringbyade.vercel.app/" target="_blank" className="project-img"></a>
+                                        <a href="https://thekazihub.vercel.app/" target="_blank" rel="noreferrer" className="project-img"></a>
                                         <div className="project-info">
-                                            <h1><a href="https://foodspringbyade.vercel.app/" target="_blank">Foodspring</a></h1>
+                                            <h1><a href="https://thekazihub.vercel.app/" target="_blank" rel="noreferrer">Kazi</a></h1>
                                             <p>
-                                                A clean, responsive landing page for a premium nutrition brand. Built with React and styled with plain CSS, focused on layout, typography, and mobile-first design.
+                                                A premier artisan and professional services marketplace connecting customers with vetted local experts across neighborhoods with instant availability tracking, transparent pricing, dual-role dashboards, and real-time chat.
                                             </p>
-                                            <a className="git" href="https://github.com/AdeDevs/foodspring.git" target="_blank">GitHub Repo</a>
+                                            <a className="git" href="https://github.com/AdeDevs/kazi.git" target="_blank" rel="noreferrer">GitHub Repo</a>
                                         </div>
                                     </motion.section>
                                     <motion.section className="project-card card-two" variants={projectItem}>
-                                        <a href="https://rotatebyade.vercel.app/" target="_blank" className="project-img">
+                                        <a href="https://directrent.space" target="_blank" rel="noreferrer" className="project-img">
                                         </a>
                                         <div className="project-info">
-                                            <h1><a href="https://rotatebyade.vercel.app/" target="_blank">rotate</a></h1>
+                                            <h1><a href="https://directrent.space" target="_blank" rel="noreferrer">DirectRent</a></h1>
                                             <p>
-                                                A visually bold homepage concept inspired by modern fashion sites. Built using React with subtle animation touches from Framer Motion to enhance movement and flow.
+                                                A verified digital rental marketplace connecting students and residents directly with landlords for scam-free renting — featuring verified student hostels, off-campus accommodations, upfront pricing, and zero agent stress or hidden fees.
                                             </p>
-                                            <a className="git" href="https://github.com/AdeDevs/rotate.git" target="_blank">GitHub Repo</a>
+                                            <a className="git" href="https://github.com/AdeDevs/directrent.git" target="_blank" rel="noreferrer">GitHub Repo</a>
                                         </div>
                                     </motion.section>
                                     <motion.section className="project-card card-three" variants={projectItem}>
-                                        <a href="https://gallerybyade.vercel.app/" target="_blank" className="project-img">
+                                        <a href="https://maishaimport.vercel.app/" target="_blank" rel="noreferrer" className="project-img">
                                         </a>
                                         <div className="project-info">
-                                            <h1><a href="https://gallerybyade.vercel.app/" target="_blank">Gallery</a></h1>
+                                            <h1><a href="https://maishaimport.vercel.app/" target="_blank" rel="noreferrer">Maisha</a></h1>
                                             <p>
-                                                A minimal and elegant image gallery built with React. Focused on clean layout, strong visual balance, and simple presentation.
+                                                A premier private import-export fashion store in Nigeria offering curated collections of quality apparel, footwear, and accessories with seamless catalog exploration and sleek modern aesthetics.
                                             </p>
-                                            <a className="git" href="https://github.com/AdeDevs/reseda.git" target="_blank">GitHub Repo</a>
+                                            <a className="git" href="https://github.com/AdeDevs/maisha.git" target="_blank" rel="noreferrer">GitHub Repo</a>
                                         </div>
                                     </motion.section>
                                     <motion.section className="project-card card-four" variants={projectItem}>

@@ -86,8 +86,8 @@
 
 .project-card .project-img {
     height: 300px;
-    background-color: aqua;
-    background-position: center;
+    background-color: #1a1a1a;
+    background-position: top center;
     background-size: cover;
     border-radius: 5px;
     position: relative;
@@ -115,15 +115,16 @@
     }
 }
 .card-one .project-img {
-    background-image: url(../assets/foodspring.png);
-    background-color: aqua;
+    background-image: url(../assets/kazi.png);
     background-position: top;
 }
 .card-two .project-img {
-    background-image: url(../assets/rotate.png);
+    background-image: url(../assets/directrent.png);
+    background-position: top;
 }
 .card-three .project-img {
-    background-image: url(../assets/gallery.png);
+    background-image: url(../assets/maisha.png);
+    background-position: top;
 }
 .card-four .project-img {
     background-image: url(../assets/spotify.png);
@@ -225,13 +226,13 @@
         background-position: top;
     }
     .card-one .project-img {
-        background-image: url(../assets/foodsprng.png);
+        background-image: url(../assets/kazi.png);
     }
     .card-two .project-img {
-        background-image: url(../assets/rotate-mob.png);
+        background-image: url(../assets/directrent.png);
     }
     .card-three .project-img {
-        background-image: url(../assets/gallery-mob.png);
+        background-image: url(../assets/maisha.png);
     }
     .card-four .project-img {
         background-image: url(../assets/spotify-mob.png);
@@ -249,4 +250,246 @@
         grid-template-columns: 1fr;
         gap: 50px;
     }
+}
+
+/* GitHub Showcase & Toggle Button Styling */
+.projects-toggle-group {
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+    flex-wrap: wrap;
+}
+
+.toggle-btn {
+    border: 2px solid #555;
+    background: transparent;
+    color: inherit;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: #f2f2f2;
+    color: #f2f2f2;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn.active {
+    background: #f2f2f2;
+    color: #111;
+    border-color: #f2f2f2;
+}
+
+.github-showcase {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.github-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 18px 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.github-user-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.github-icon-label {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.github-input, .github-filter-input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #555;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.github-input:focus, .github-filter-input:focus {
+    border-color: #fff;
+}
+
+.github-fetch-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.github-fetch-btn:hover {
+    opacity: 0.85;
+}
+
+.github-filter-input {
+    min-width: 260px;
+}
+
+.github-loading, .github-error, .github-empty {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.github-retry-btn {
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.github-repos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .github-repos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .github-repos-grid {
+        grid-template-columns: 1fr;
+    }
+    .github-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .projects-toggle-group {
+        align-self: flex-start;
+        margin-top: 15px;
+    }
+}
+
+.github-repo-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-repo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.repo-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.repo-title:hover {
+    text-decoration: underline;
+}
+
+.repo-visibility {
+    font-size: 11px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    padding: 2px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+}
+
+.repo-desc {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.repo-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #bbb;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+
+.repo-lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3178c6;
+    display: inline-block;
+}
+
+.repo-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.repo-link-btn {
+    margin-left: auto;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.repo-link-btn:hover {
+    color: #aaa;
+    text-decoration: underline;
 }

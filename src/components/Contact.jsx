@@ -1,11 +1,4 @@
-import { useState } from "react";
-
 function ContactPage() {
-    const [isDarkMode, setIsDarkMode] = useState(false)
-
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode)
-    }
     return (
         <>
         <div className="contact">

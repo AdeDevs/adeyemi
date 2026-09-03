@@ -26,7 +26,7 @@ export default function Reveal({
   delay = 0,
 }) {
   const child = Children.only(children);
-  const MotionComponent = motion(child.type);
+  const MotionComponent = motion.create(child.type);
 
   return (
     <MotionComponent
