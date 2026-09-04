@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { DotChar } from "./DotGlyph";
+import LoaderCanvas from "./LoaderCanvas";
 
 export default function PageLoader({ isTheme, onLoaded }) {
   const [progress, setProgress] = useState(0);
@@ -77,7 +78,7 @@ export default function PageLoader({ isTheme, onLoaded }) {
     return () => clearInterval(interval);
   }, []);
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     if (!isReady || isExiting || isOpen) return;
     setIsExiting(true);
 
@@ -89,7 +90,7 @@ export default function PageLoader({ isTheme, onLoaded }) {
       document.body.style.touchAction = "";
       if (onLoaded) onLoaded();
     }, 700);
-  };
+  }, [isReady, isExiting, isOpen, onLoaded]);
 
   // Keyboard shortcut (Enter / Space)
   useEffect(() => {
@@ -101,7 +102,7 @@ export default function PageLoader({ isTheme, onLoaded }) {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isReady, isExiting, isOpen]);
+  }, [isReady, isExiting, isOpen, handleOpen]);
 
   const formattedProgress = String(progress).padStart(3, "0");
   const digits = formattedProgress.split("");
@@ -119,20 +120,28 @@ export default function PageLoader({ isTheme, onLoaded }) {
           }}
           onClick={isReady ? handleOpen : undefined}
           style={{ cursor: isReady ? "pointer" : "default" }}
-          className={`fixed inset-0 z-[100] flex flex-col justify-between p-4 sm:p-6 md:p-8 select-none ${
+          className={`fixed inset-0 z-[100] flex flex-col justify-between p-4 sm:p-6 md:p-8 select-none overflow-hidden ${
             isTheme ? "bg-[#f5f5f5] text-neutral-900" : "bg-[#090b0e] text-neutral-100"
           }`}
         >
+          {/* Ambient Dot Matrix Radar Wave & "ADEDEVS" Watermark Canvas */}
+          <LoaderCanvas
+            progress={progress}
+            isReady={isReady}
+            isExiting={isExiting}
+            isTheme={isTheme}
+          />
+
           {/* Top Bar: Unified 4-Corner Ledger Typography */}
-          <div className="flex items-center justify-between font-mono-tech text-[11px] sm:text-xs text-neutral-500 tracking-widest uppercase">
+          <div className="relative z-10 flex items-center justify-between font-mono-tech text-[11px] sm:text-xs text-neutral-500 tracking-widest uppercase">
             <span>[ ADEDEVS ]</span>
             <span>{lagosTime || "LAGOS 00:00:00 WAT"}</span>
           </div>
 
           {/* Main Content Area */}
-          <div className="flex-1 flex flex-col justify-end items-end w-full py-2 sm:py-4 md:py-6">
+          <div className="relative z-10 flex-1 flex flex-col justify-end items-end w-full py-2 sm:py-4 md:py-6 pointer-events-none">
             {/* Right-Aligned Stack: Counter + Click to Open */}
-            <div className="flex flex-col items-end justify-end gap-3 sm:gap-4 md:gap-5">
+            <div className="flex flex-col items-end justify-end gap-3 sm:gap-4 md:gap-5 pointer-events-auto">
               {/* Responsive Dot Matrix Counter */}
               <div className="flex items-center justify-end gap-1.5 sm:gap-2.5 md:gap-4 lg:gap-5">
                 {digits.map((digit, idx) => (
@@ -173,7 +182,7 @@ export default function PageLoader({ isTheme, onLoaded }) {
           </div>
 
           {/* Desktop Bottom Bar: Unified Corners (Hidden on Mobile) */}
-          <div className="hidden md:flex items-center justify-between font-mono-tech text-[11px] sm:text-xs text-neutral-500 tracking-widest uppercase">
+          <div className="relative z-10 hidden md:flex items-center justify-between font-mono-tech text-[11px] sm:text-xs text-neutral-500 tracking-widest uppercase">
             <div>LAGOS // GLOBAL</div>
             <div>
               {isReady ? (

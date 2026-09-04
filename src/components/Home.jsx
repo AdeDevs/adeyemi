@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import PageLoader from "./PageLoader";
 import Navbar from "./Navbar";
+import InteractiveDotBackground from "./InteractiveDotBackground";
+import NothingCursor from "./NothingCursor";
 import Hero from "./Hero";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
@@ -70,11 +72,17 @@ export default function HomePage() {
       {/* Technical Modernist Interactive Preloader */}
       <PageLoader isTheme={isTheme} />
 
+      {/* Living Ambient LED Dot Matrix Substrate */}
+      <InteractiveDotBackground isTheme={isTheme} />
+
+      {/* Nothing OS Custom Hardware Reticle Cursor (Desktop) */}
+      <NothingCursor isTheme={isTheme} />
+
       {/* Floating Centered Navigation */}
       <Navbar isTheme={isTheme} toggleTheme={toggleTheme} />
 
       {/* Main Content Sections - Using full available screen width */}
-      <main className="w-full px-4 sm:px-8 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32">
+      <main className="w-full px-4 sm:px-8 md:px-12 lg:px-16 pt-20 sm:pt-22 md:pt-24">
         <Hero isTheme={isTheme} />
         <AboutSection isTheme={isTheme} />
         <ProjectsSection isTheme={isTheme} />

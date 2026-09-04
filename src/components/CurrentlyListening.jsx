@@ -74,12 +74,12 @@ export default function CurrentlyListening({ isTheme }) {
       {/* Header bar: "LISTEN ALONG WITH ME" */}
       <div className="flex items-center justify-between font-mono-tech text-[10px] uppercase tracking-wider pb-1.5 mb-1.5 border-b border-inherit">
         <div className="flex items-center gap-1.5">
-          <Radio size={12} className={track.isPlaying ? "text-emerald-500 animate-pulse" : "text-neutral-500"} />
+          <Radio size={12} className={track.isPlaying ? "text-emerald-500" : "text-neutral-500"} />
           <span className="font-bold text-neutral-500">LISTEN ALONG WITH ME</span>
         </div>
         {track.isPlaying ? (
           <div className="flex items-center gap-1 text-emerald-500 font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             <span>CURRENTLY PLAYING</span>
           </div>
         ) : track.isRecent ? (

@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { featuredProjects } from "../data/projectsData";
-import { ArrowUpRight, GitBranch, Globe } from "lucide-react";
+import { ArrowUpRight, GitBranch, Globe, Plus, Minus } from "lucide-react";
 
 export default function ProjectsSection({ isTheme }) {
   const [previewModal, setPreviewModal] = useState(null); // { title: string, url: string }
+  const [expandedProjectId, setExpandedProjectId] = useState("directrent"); // Project 01 open by default
+
+  const toggleProject = (id) => {
+    setExpandedProjectId((prev) => (prev === id ? null : id));
+  };
 
   const flagshipProjects = featuredProjects.slice(0, 3);
   const utilityProjects = featuredProjects.slice(3);
@@ -56,185 +61,297 @@ export default function ProjectsSection({ isTheme }) {
           </span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <h2
-            className={`text-3xl sm:text-4xl font-extrabold uppercase tracking-tight ${
-              isTheme ? "text-neutral-950" : "text-neutral-100"
-            }`}
-          >
-            Featured Projects
-          </h2>
+          <div>
+            <h2
+              className={`text-3xl sm:text-4xl font-extrabold uppercase tracking-tight ${
+                isTheme ? "text-neutral-950" : "text-neutral-100"
+              }`}
+            >
+              Featured Projects
+            </h2>
+            <div className="flex items-center gap-2 mt-1.5 font-mono-tech text-[10px] sm:text-xs text-neutral-500">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>CARTRIDGE ARCH // TAP ANY PROJECT TO EXPAND SPEC</span>
+            </div>
+          </div>
           <p className={`font-mono-tech text-xs max-w-md ${isTheme ? "text-neutral-700" : "text-neutral-400"}`}>
             Production marketplaces, verified rental networks, and web utilities engineered with modern React, strict RBAC, and zero bloat.
           </p>
         </div>
       </motion.div>
 
-      {/* Part 1: Flagship Showcase - Alternating Editorial Rows (Reduced Mobile Padding) */}
-      <div className="space-y-12 sm:space-y-16 md:space-y-20 mb-16 sm:mb-20">
+      {/* Part 1: Flagship Showcase - Expandable Hardware Cartridge Accordion (Single-Active) */}
+      <div className="space-y-3 sm:space-y-4 mb-16 sm:mb-20">
         {flagshipProjects.map((project, index) => {
           const isEven = index % 2 === 1;
+          const isExpanded = expandedProjectId === project.id;
 
           return (
             <motion.article
               key={project.id}
               id={`project-${project.id}`}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start p-4 sm:p-6 md:p-8 border transition-all duration-300 hover:border-neutral-500/80 ${
-                isTheme
-                  ? "bg-white border-neutral-300 shadow-sm hover:shadow-md"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className={`group border transition-all duration-300 overflow-hidden ${
+                isExpanded
+                  ? isTheme
+                    ? "bg-white border-neutral-400 shadow-md ring-1 ring-neutral-400/20"
+                    : "bg-[#0d1015] border-neutral-700 shadow-lg ring-1 ring-neutral-700/30"
+                  : isTheme
+                  ? "bg-white border-neutral-300/90 hover:border-neutral-400 shadow-xs"
                   : "bg-[#0d1015] border-neutral-800 hover:border-neutral-700"
               }`}
             >
-              {/* Media Column (Alternates order on desktop) */}
-              <div
-                className={`lg:col-span-6 ${
-                  isEven ? "lg:order-2" : "lg:order-1"
+              {/* Cartridge Header Bar - Click to Toggle */}
+              <button
+                type="button"
+                onClick={() => toggleProject(project.id)}
+                aria-expanded={isExpanded}
+                className={`w-full text-left p-3.5 sm:p-5 flex items-center justify-between gap-3 transition-colors cursor-pointer select-none ${
+                  isTheme
+                    ? isExpanded
+                      ? "bg-neutral-50/90 border-b border-neutral-200"
+                      : "bg-white hover:bg-neutral-50/70"
+                    : isExpanded
+                    ? "bg-[#121620] border-b border-neutral-800"
+                    : "bg-[#0d1015] hover:bg-[#11151c]"
                 }`}
               >
-                <div
-                  className={`border transition-all overflow-hidden ${
-                    isTheme
-                      ? "border-neutral-300 bg-neutral-100"
-                      : "border-neutral-800 bg-neutral-950"
-                  }`}
-                >
-                  {/* Browser chrome header bar with Red, Yellow, Green macOS-style window controls */}
-                  <div
-                    className={`flex items-center justify-between px-3 py-2 border-b font-mono-tech text-[11px] ${
+                {/* Left: Project Number + Title + Category Pill */}
+                <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
+                  <span
+                    className={`font-mono-tech text-xs sm:text-sm font-bold transition-colors ${
+                      isExpanded
+                        ? "text-emerald-500"
+                        : isTheme
+                        ? "text-neutral-500"
+                        : "text-neutral-400"
+                    }`}
+                  >
+                    [{project.number}]
+                  </span>
+                  <h3
+                    className={`text-base sm:text-xl font-bold uppercase tracking-tight truncate transition-colors ${
+                      isTheme ? "text-neutral-950" : "text-neutral-50"
+                    }`}
+                  >
+                    {project.title}
+                  </h3>
+                  <span
+                    className={`hidden md:inline-block font-mono-tech text-[10px] uppercase tracking-wider px-2 py-0.5 border ${
                       isTheme
                         ? "bg-neutral-100 border-neutral-300 text-neutral-700"
                         : "bg-neutral-900 border-neutral-800 text-neutral-400"
                     }`}
                   >
-                    {/* Red, Yellow, Green macOS-style controls */}
-                    <div className="flex items-center gap-1.5">
-                      <span
-                        className="w-2.5 h-2.5 rounded-full bg-[#ef4444] border border-red-600/40 inline-block"
-                        title="Close window"
-                      ></span>
-                      <span
-                        className="w-2.5 h-2.5 rounded-full bg-neutral-400/40 dark:bg-neutral-600/50 border border-neutral-500/30 inline-block cursor-default"
-                        title="Minimize disabled"
-                      ></span>
-                      <button
-                        type="button"
-                        onClick={() => openPreview(project)}
-                        className="w-2.5 h-2.5 rounded-full bg-[#22c55e] border border-green-600/40 inline-block hover:scale-125 transition-transform cursor-pointer"
-                        title="Click green dot to preview website"
-                        aria-label="Preview website"
-                      ></button>
-                    </div>
+                    {project.category}
+                  </span>
+                </div>
 
-                    <span className="truncate max-w-[200px] sm:max-w-[240px] text-[10px] text-neutral-500">
-                      {project.liveUrl.replace("https://", "").replace("http://", "")}
-                    </span>
-
-                    <span className="w-4"></span>
+                {/* Right: Glyph LED matrix rail + Tap to Expand/Collapse Affordance Pill */}
+                <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
+                  {/* Glyph LEDs */}
+                  <div className="hidden sm:flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+                    {[0, 1, 2, 3, 4, 5].map((dotIdx) => (
+                      <span
+                        key={dotIdx}
+                        className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                          isExpanded
+                            ? "bg-emerald-500"
+                            : isTheme
+                            ? "bg-neutral-300 group-hover:bg-neutral-400"
+                            : "bg-neutral-700 group-hover:bg-neutral-600"
+                        }`}
+                        style={{ transitionDelay: `${dotIdx * 25}ms` }}
+                      />
+                    ))}
                   </div>
 
-                  {/* Project image anchored to top with interactive click */}
+                  {/* Hardware Toggle Indicator Button */}
                   <div
-                    onClick={() => openPreview(project)}
-                    className="block group overflow-hidden relative aspect-[16/10] cursor-pointer bg-neutral-900"
+                    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 font-mono-tech text-[10px] sm:text-xs uppercase tracking-wider border transition-all duration-200 ${
+                      isExpanded
+                        ? "bg-emerald-500/10 border-emerald-500/70 text-emerald-500 font-bold"
+                        : isTheme
+                        ? "bg-neutral-100 border-neutral-300 text-neutral-700 group-hover:border-neutral-500 group-hover:text-black"
+                        : "bg-neutral-900 border-neutral-800 text-neutral-400 group-hover:border-neutral-600 group-hover:text-white"
+                    }`}
                   >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-300 flex items-center justify-center">
-                      <span className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 px-3 py-1.5 bg-neutral-950/95 text-white font-mono-tech text-xs uppercase tracking-wider font-bold border border-emerald-500/70 flex items-center gap-1.5 shadow-xl">
-                        <span>Preview Website</span>
-                        <ArrowUpRight size={13} className="text-emerald-400" />
-                      </span>
-                    </div>
+                    <span className="font-semibold">
+                      {isExpanded ? "COLLAPSE" : "TAP TO EXPAND"}
+                    </span>
+                    <span className="inline-flex items-center justify-center">
+                      {isExpanded ? <Minus size={13} className="text-emerald-500" /> : <Plus size={13} />}
+                    </span>
                   </div>
                 </div>
-              </div>
+              </button>
 
-              {/* Narrative & Details Column */}
-              <div
-                className={`lg:col-span-6 flex flex-col justify-start ${
-                  isEven ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
-                {/* Micro meta header */}
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="font-mono-tech text-xs font-bold text-neutral-500">
-                    [{project.number}]
-                  </span>
-                  <span
-                    className={`font-mono-tech text-xs px-2 py-0.5 border ${
-                      isTheme
-                        ? "bg-neutral-100 border-neutral-300 text-neutral-800 font-medium"
-                        : "bg-neutral-900 border-neutral-800 text-neutral-300"
-                    }`}
+              {/* Animated Expandable Body */}
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    key={`content-${project.id}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
                   >
-                    {project.role}
-                  </span>
-                </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start p-4 sm:p-6 md:p-8">
+                      {/* Media Column (Alternates order on desktop) */}
+                      <div
+                        className={`lg:col-span-6 ${
+                          isEven ? "lg:order-2" : "lg:order-1"
+                        }`}
+                      >
+                        <div
+                          className={`border transition-all overflow-hidden ${
+                            isTheme
+                              ? "border-neutral-300 bg-neutral-100"
+                              : "border-neutral-800 bg-neutral-950"
+                          }`}
+                        >
+                          {/* Browser chrome header bar with Red, Yellow, Green macOS-style window controls */}
+                          <div
+                            className={`flex items-center justify-between px-3 py-2 border-b font-mono-tech text-[11px] ${
+                              isTheme
+                                ? "bg-neutral-100 border-neutral-300 text-neutral-700"
+                                : "bg-neutral-900 border-neutral-800 text-neutral-400"
+                            }`}
+                          >
+                            {/* Red, Yellow, Green macOS-style controls */}
+                            <div className="flex items-center gap-1.5">
+                              <span
+                                className="w-2.5 h-2.5 rounded-full bg-[#ef4444] border border-red-600/40 inline-block"
+                                title="Close window"
+                              ></span>
+                              <span
+                                className="w-2.5 h-2.5 rounded-full bg-neutral-400/40 dark:bg-neutral-600/50 border border-neutral-500/30 inline-block cursor-default"
+                                title="Minimize disabled"
+                              ></span>
+                              <button
+                                type="button"
+                                onClick={() => openPreview(project)}
+                                className="w-2.5 h-2.5 rounded-full bg-[#22c55e] border border-green-600/40 inline-block hover:scale-125 transition-transform cursor-pointer"
+                                title="Click green dot to preview website"
+                                aria-label="Preview website"
+                              ></button>
+                            </div>
 
-                {/* Title */}
-                <h3
-                  className={`text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-1.5 ${
-                    isTheme ? "text-neutral-950" : "text-neutral-50"
-                  }`}
-                >
-                  {project.title}
-                </h3>
+                            <span className="truncate max-w-[200px] sm:max-w-[240px] text-[10px] text-neutral-500">
+                              {project.liveUrl.replace("https://", "").replace("http://", "")}
+                            </span>
 
-                {/* Tagline */}
-                <div className={`font-mono-tech text-xs uppercase tracking-wider mb-3.5 ${isTheme ? "text-neutral-700 font-medium" : "text-neutral-400"}`}>
-                  {project.tagline}
-                </div>
+                            <span className="w-4"></span>
+                          </div>
 
-                {/* Description in mono tech font */}
-                <p
-                  className={`font-mono-tech text-xs sm:text-sm leading-relaxed mb-6 ${
-                    isTheme ? "text-neutral-800 font-normal" : "text-neutral-200"
-                  }`}
-                >
-                  {project.description}
-                </p>
+                          {/* Project image anchored to top with interactive click */}
+                          <div
+                            onClick={() => openPreview(project)}
+                            className="block group/preview overflow-hidden relative aspect-[16/10] cursor-pointer bg-neutral-900"
+                          >
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              loading="lazy"
+                              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/preview:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover/preview:bg-black/35 transition-colors duration-300 flex items-center justify-center">
+                              <span className="opacity-0 group-hover/preview:opacity-100 group-hover/preview:translate-y-0 translate-y-2 transition-all duration-300 px-3 py-1.5 bg-neutral-950/95 text-white font-mono-tech text-xs uppercase tracking-wider font-bold border border-emerald-500/70 flex items-center gap-1.5 shadow-xl">
+                                <span>Preview Website</span>
+                                <ArrowUpRight size={13} className="text-emerald-400" />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                {/* Pure Tech Stack Pills (3-4 essential tech stacks) */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {project.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={`px-2 py-1 font-mono-tech text-[11px] border transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-500 hover:border-emerald-500 hover:text-white cursor-default ${
-                        isTheme
-                          ? "bg-neutral-100 border-neutral-300 text-neutral-900 font-medium"
-                          : "bg-neutral-900 border-neutral-800 text-neutral-300"
-                      }`}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                      {/* Narrative & Details Column */}
+                      <div
+                        className={`lg:col-span-6 flex flex-col justify-start ${
+                          isEven ? "lg:order-1" : "lg:order-2"
+                        }`}
+                      >
+                        {/* Micro meta header */}
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="font-mono-tech text-xs font-bold text-neutral-500">
+                            [{project.number}]
+                          </span>
+                          <span
+                            className={`font-mono-tech text-xs px-2 py-0.5 border ${
+                              isTheme
+                                ? "bg-neutral-100 border-neutral-300 text-neutral-800 font-medium"
+                                : "bg-neutral-900 border-neutral-800 text-neutral-300"
+                            }`}
+                          >
+                            {project.role}
+                          </span>
+                        </div>
 
-                {/* Clean Primary Action: Live Website with hover invert */}
-                <div className="flex items-center">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`group px-4 sm:px-5 py-2.5 border font-mono-tech text-xs uppercase tracking-wider font-bold flex items-center gap-2 transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 hover:text-black active:scale-[0.98] ${
-                      isTheme
-                        ? "bg-neutral-950 border-neutral-950 text-white"
-                        : "bg-neutral-100 border-neutral-100 text-neutral-950"
-                    }`}
-                  >
-                    <Globe size={14} />
-                    <span>Live Website</span>
-                    <ArrowUpRight size={14} className="transition-transform duration-200 group-hover:rotate-45" />
-                  </a>
-                </div>
-              </div>
+                        {/* Title */}
+                        <h3
+                          className={`text-2xl sm:text-3xl font-extrabold uppercase tracking-tight mb-1.5 ${
+                            isTheme ? "text-neutral-950" : "text-neutral-50"
+                          }`}
+                        >
+                          {project.title}
+                        </h3>
+
+                        {/* Tagline */}
+                        <div className={`font-mono-tech text-xs uppercase tracking-wider mb-3.5 ${isTheme ? "text-neutral-700 font-medium" : "text-neutral-400"}`}>
+                          {project.tagline}
+                        </div>
+
+                        {/* Description in mono tech font */}
+                        <p
+                          className={`font-mono-tech text-xs sm:text-sm leading-relaxed mb-6 ${
+                            isTheme ? "text-neutral-800 font-normal" : "text-neutral-200"
+                          }`}
+                        >
+                          {project.description}
+                        </p>
+
+                        {/* Pure Tech Stack Pills (3-4 essential tech stacks) */}
+                        <div className="flex flex-wrap gap-1.5 mb-6">
+                          {project.tags.map((t) => (
+                            <span
+                              key={t}
+                              className={`px-2 py-1 font-mono-tech text-[11px] border transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-500 hover:border-emerald-500 hover:text-white cursor-default ${
+                                isTheme
+                                  ? "bg-neutral-100 border-neutral-300 text-neutral-900 font-medium"
+                                  : "bg-neutral-900 border-neutral-800 text-neutral-300"
+                              }`}
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Clean Primary Action: Live Website with hover invert */}
+                        <div className="flex items-center">
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`group/btn px-4 sm:px-5 py-2.5 border font-mono-tech text-xs uppercase tracking-wider font-bold flex items-center gap-2 transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 hover:text-black active:scale-[0.98] ${
+                              isTheme
+                                ? "bg-neutral-950 border-neutral-950 text-white"
+                                : "bg-neutral-100 border-neutral-100 text-neutral-950"
+                            }`}
+                          >
+                            <Globe size={14} />
+                            <span>Live Website</span>
+                            <ArrowUpRight size={14} className="transition-transform duration-200 group-hover/btn:rotate-45" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.article>
           );
         })}
@@ -270,14 +387,14 @@ export default function ProjectsSection({ isTheme }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4 }}
-              className={`p-4 sm:p-5 md:p-6 transition-all duration-200 flex flex-col gap-4 ${
+              className={`group p-4 sm:p-5 md:p-6 transition-all duration-200 flex flex-col gap-4 ${
                 isTheme
                   ? "bg-white hover:bg-neutral-50/90"
                   : "bg-[#0d1015] hover:bg-neutral-900/50"
               }`}
             >
-              {/* Row 1: Header - Desktop has unified [Number] Title on left, Category pinned on far right. Mobile drops category below. */}
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 w-full">
+              {/* Row 1: Header - Desktop has unified [Number] Title on left, Category and Glyph on far right */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
                 {/* Unified Title & Number */}
                 <div className="flex items-baseline gap-2.5">
                   <span className={`font-mono-tech text-xs font-bold ${isTheme ? "text-neutral-500" : "text-neutral-400"}`}>
@@ -292,9 +409,20 @@ export default function ProjectsSection({ isTheme }) {
                   </h4>
                 </div>
 
-                {/* Category: Far right on desktop, moves down to the left on mobile */}
-                <div className={`font-mono-tech text-[11px] uppercase tracking-wider sm:text-right ${isTheme ? "text-neutral-700 font-medium" : "text-neutral-400"}`}>
-                  {util.category}
+                {/* Category & Micro Glyph Rail */}
+                <div className="flex items-center gap-3 sm:justify-end">
+                  <div className="flex items-center gap-1 opacity-40 group-hover:opacity-100 transition-opacity">
+                    {[0, 1, 2, 3].map((dotIdx) => (
+                      <span
+                        key={dotIdx}
+                        className="w-1.5 h-1.5 rounded-full transition-all duration-200 bg-neutral-400/50 dark:bg-neutral-600/50 group-hover:bg-emerald-500"
+                        style={{ transitionDelay: `${dotIdx * 30}ms` }}
+                      />
+                    ))}
+                  </div>
+                  <div className={`font-mono-tech text-[11px] uppercase tracking-wider ${isTheme ? "text-neutral-700 font-medium" : "text-neutral-400"}`}>
+                    {util.category}
+                  </div>
                 </div>
               </div>
 

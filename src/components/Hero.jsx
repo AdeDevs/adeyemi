@@ -29,7 +29,7 @@ export default function Hero({ isTheme }) {
   return (
     <section
       id="hero-section"
-      className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 md:py-20 border-b transition-colors border-inherit"
+      className="relative pt-3 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 border-b transition-colors border-inherit"
     >
       {/* Main Grid: Editorial Statement + Developer Portrait */}
       <motion.div
@@ -109,7 +109,7 @@ export default function Hero({ isTheme }) {
             >
               <span>ADEYEMI AKINYEMI</span>
               <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping opacity-75"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 <span>LAGOS, NG</span>
               </span>
             </div>
