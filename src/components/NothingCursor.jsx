@@ -91,75 +91,78 @@ export default function NothingCursor({ isTheme }) {
 
   return (
     <div className="hidden md:block pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {/* Precision Core Point */}
+      {/* Precision Core Point - Mathematically centered */}
       <div
         ref={cursorDotRef}
-        className="fixed top-0 left-0 -ml-[2px] -mt-[2px] w-[5px] h-[5px] rounded-full pointer-events-none transition-opacity duration-150"
+        className="fixed top-0 left-0 -ml-[3px] -mt-[3px] w-1.5 h-1.5 rounded-full pointer-events-none transition-opacity duration-150 will-change-transform"
         style={{
-          backgroundColor: isTheme ? "#0f172a" : "#f1f5f9",
-          boxShadow: isTheme
-            ? "0 0 6px rgba(16, 185, 129, 0.6)"
-            : "0 0 8px rgba(52, 211, 153, 0.8)",
+          backgroundColor: isHovered
+            ? "#10b981"
+            : isTheme
+            ? "#0f172a"
+            : "#f1f5f9",
+          boxShadow: isHovered
+            ? "0 0 8px rgba(16, 185, 129, 0.9)"
+            : isTheme
+            ? "0 0 4px rgba(15, 23, 42, 0.4)"
+            : "0 0 6px rgba(241, 245, 249, 0.6)",
         }}
       />
 
-      {/* Nothing OS Target Reticle [ · ] */}
+      {/* Nothing OS Target Reticle [ · ] - Separated positional translate (ref) from responsive scale wrapper */}
       <div
         ref={cursorReticleRef}
-        className={`fixed top-0 left-0 pointer-events-none transition-all duration-200 ease-out flex items-center justify-center ${
-          isHovered
-            ? "-ml-5 -mt-5 w-10 h-10 scale-105"
-            : "-ml-3.5 -mt-3.5 w-7 h-7 scale-100"
-        } ${isClicking ? "scale-90" : ""}`}
+        className="fixed top-0 left-0 pointer-events-none will-change-transform"
       >
-        {/* Top-Left Bracket */}
-        <span
-          className={`absolute top-0 left-0 w-2 h-2 border-t-[1.5px] border-l-[1.5px] transition-colors duration-150 ${
-            isHovered
-              ? "border-emerald-500"
-              : isTheme
-              ? "border-neutral-800/80"
-              : "border-neutral-200/80"
-          }`}
-        />
+        <div
+          className={`w-8 h-8 -ml-4 -mt-4 transition-all duration-200 ease-out ${
+            isHovered ? "scale-140" : "scale-100"
+          } ${isClicking ? "scale-90" : ""}`}
+        >
+          {/* Top-Left Bracket */}
+          <span
+            className={`absolute top-0 left-0 w-2 h-2 border-t-[1.5px] border-l-[1.5px] transition-colors duration-150 ${
+              isHovered
+                ? "border-emerald-500"
+                : isTheme
+                ? "border-neutral-800/80"
+                : "border-neutral-200/80"
+            }`}
+          />
 
-        {/* Top-Right Bracket */}
-        <span
-          className={`absolute top-0 right-0 w-2 h-2 border-t-[1.5px] border-r-[1.5px] transition-colors duration-150 ${
-            isHovered
-              ? "border-emerald-500"
-              : isTheme
-              ? "border-neutral-800/80"
-              : "border-neutral-200/80"
-          }`}
-        />
+          {/* Top-Right Bracket */}
+          <span
+            className={`absolute top-0 right-0 w-2 h-2 border-t-[1.5px] border-r-[1.5px] transition-colors duration-150 ${
+              isHovered
+                ? "border-emerald-500"
+                : isTheme
+                ? "border-neutral-800/80"
+                : "border-neutral-200/80"
+            }`}
+          />
 
-        {/* Bottom-Left Bracket */}
-        <span
-          className={`absolute bottom-0 left-0 w-2 h-2 border-b-[1.5px] border-l-[1.5px] transition-colors duration-150 ${
-            isHovered
-              ? "border-emerald-500"
-              : isTheme
-              ? "border-neutral-800/80"
-              : "border-neutral-200/80"
-          }`}
-        />
+          {/* Bottom-Left Bracket */}
+          <span
+            className={`absolute bottom-0 left-0 w-2 h-2 border-b-[1.5px] border-l-[1.5px] transition-colors duration-150 ${
+              isHovered
+                ? "border-emerald-500"
+                : isTheme
+                ? "border-neutral-800/80"
+                : "border-neutral-200/80"
+            }`}
+          />
 
-        {/* Bottom-Right Bracket */}
-        <span
-          className={`absolute bottom-0 right-0 w-2 h-2 border-b-[1.5px] border-r-[1.5px] transition-colors duration-150 ${
-            isHovered
-              ? "border-emerald-500"
-              : isTheme
-              ? "border-neutral-800/80"
-              : "border-neutral-200/80"
-          }`}
-        />
-
-        {/* Micro status dot in reticle corner when target locked */}
-        {isHovered && (
-          <span className="absolute -top-1 -right-1 w-1 h-1 bg-emerald-500 rounded-full" />
-        )}
+          {/* Bottom-Right Bracket */}
+          <span
+            className={`absolute bottom-0 right-0 w-2 h-2 border-b-[1.5px] border-r-[1.5px] transition-colors duration-150 ${
+              isHovered
+                ? "border-emerald-500"
+                : isTheme
+                ? "border-neutral-800/80"
+                : "border-neutral-200/80"
+            }`}
+          />
+        </div>
       </div>
     </div>
   );
