@@ -100,13 +100,13 @@ export default function CurrentlyListening({ isTheme }) {
             href={track.spotifyUrl || "https://open.spotify.com"}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center justify-between gap-3 p-1 transition-colors hover:bg-neutral-500/5 rounded-xs"
+            className="group flex items-center justify-between gap-3 p-1 transition-colors"
             title={`Open ${track.title} by ${track.artist} on Spotify`}
           >
             <div className="flex items-center gap-2.5 min-w-0">
               {/* Album Cover Art or Music Icon */}
               <div
-                className={`w-9 h-9 shrink-0 border overflow-hidden flex items-center justify-center transition-colors group-hover:border-emerald-500 ${
+                className={`w-9 h-9 shrink-0 border overflow-hidden flex items-center justify-center transition-colors ${
                   isTheme
                     ? "bg-neutral-100 border-neutral-300 text-neutral-800"
                     : "bg-neutral-900 border-neutral-800 text-neutral-200"

@@ -69,8 +69,7 @@ export default function ProjectsSection({ isTheme }) {
             >
               Featured Projects
             </h2>
-            <div className="flex items-center gap-2 mt-1.5 font-mono-tech text-[10px] sm:text-xs text-neutral-500">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <div className="flex items-center mt-1.5 font-mono-tech text-[10px] sm:text-xs text-neutral-500">
               <span>CARTRIDGE ARCH // TAP ANY PROJECT TO EXPAND SPEC</span>
             </div>
           </div>

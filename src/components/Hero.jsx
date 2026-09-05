@@ -108,8 +108,7 @@ export default function Hero({ isTheme }) {
               }`}
             >
               <span>ADEYEMI AKINYEMI</span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span className="flex items-center">
                 <span>LAGOS, NG</span>
               </span>
             </div>

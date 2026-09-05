@@ -245,24 +245,24 @@ export default function AboutSection({ isTheme }) {
           }`}
         >
           {/* Hardware Register Header Bar */}
-          <div className="flex items-center justify-between font-mono-tech text-[10px] sm:text-xs tracking-widest uppercase pb-2 sm:pb-2.5 mb-2.5 sm:mb-3 border-b border-inherit text-neutral-500">
+          <div className="group/reg flex items-center justify-between font-mono-tech text-[10px] sm:text-xs tracking-widest uppercase pb-2 sm:pb-2.5 mb-2.5 sm:mb-3 border-b border-inherit text-neutral-500">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="inline-block w-1.5 h-1.5 bg-emerald-500"></span>
               <span className="font-bold text-emerald-500">TECH STACK</span>
               <span className="text-neutral-400 dark:text-neutral-600">{"// REGISTER"}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] text-neutral-400 dark:text-neutral-500">
-                12 UNITS
-              </span>
-              <div className="flex items-center gap-1">
-                {[0, 1, 2, 3].map((d) => (
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1 opacity-40 group-hover/reg:opacity-100 transition-opacity">
+                {[0, 1, 2, 3, 4].map((dotIdx) => (
                   <span
-                    key={d}
-                    className="w-1.5 h-1.5 rounded-full bg-neutral-400/40 dark:bg-neutral-600/40"
+                    key={dotIdx}
+                    className="w-1.5 h-1.5 rounded-full bg-neutral-400/50 dark:bg-neutral-600/50 group-hover/reg:bg-emerald-500 transition-all duration-200"
+                    style={{ transitionDelay: `${dotIdx * 35}ms` }}
                   />
                 ))}
               </div>
+              <span className="text-[10px] text-neutral-400 dark:text-neutral-500">
+                12 UNITS
+              </span>
             </div>
           </div>
 
@@ -274,23 +274,21 @@ export default function AboutSection({ isTheme }) {
             {techItems.map((tech) => (
               <div
                 key={tech.name}
-                className={`group/chip flex items-center justify-between px-2 sm:px-2.5 py-1.5 sm:py-2 border transition-all duration-150 select-none cursor-default ${
+                tabIndex={0}
+                className={`group/chip flex items-center px-2.5 sm:px-3 py-1.5 sm:py-2 border transition-all duration-200 select-none cursor-default active:border-emerald-500 focus:border-emerald-500 outline-hidden ${
                   isTheme
-                    ? "bg-neutral-50/70 border-neutral-200/90 hover:border-neutral-400 text-neutral-800 hover:text-black hover:bg-white"
-                    : "bg-[#11151c]/80 border-neutral-800/80 hover:border-neutral-700 text-neutral-300 hover:text-white hover:bg-[#161c24]"
+                    ? "bg-neutral-50/70 border-neutral-200/90 hover:border-neutral-400 active:bg-neutral-100 text-neutral-800 hover:text-black hover:bg-white"
+                    : "bg-[#11151c]/80 border-neutral-800/80 hover:border-neutral-700 active:bg-[#161c24] text-neutral-300 hover:text-white hover:bg-[#161c24]"
                 }`}
               >
-                <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-                  <div className="shrink-0 opacity-75 group-hover/chip:opacity-100 transition-opacity">
+                <div className="flex items-center gap-2 min-w-0 w-full">
+                  <div className="shrink-0 opacity-75 group-hover/chip:opacity-100 group-focus/chip:opacity-100 transition-opacity">
                     {tech.icon}
                   </div>
                   <span className="font-mono-tech text-[11px] sm:text-xs tracking-tight truncate font-medium">
                     {tech.name}
                   </span>
                 </div>
-
-                {/* Tactile Micro LED Indicator */}
-                <span className="w-1.5 h-1.5 shrink-0 ml-1 rounded-full bg-neutral-400/30 dark:bg-neutral-600/40 group-hover/chip:bg-emerald-500 group-hover/chip:scale-125 transition-all duration-150" />
               </div>
             ))}
           </div>

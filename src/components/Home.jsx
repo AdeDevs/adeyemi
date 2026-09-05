@@ -18,6 +18,8 @@ export default function HomePage() {
     return storedTheme ? JSON.parse(storedTheme) : false;
   });
 
+  const [isSiteLoaded, setIsSiteLoaded] = useState(false);
+
   const [contactPrefill, setContactPrefill] = useState({
     subject: "",
     message: "",
@@ -70,7 +72,7 @@ export default function HomePage() {
       }`}
     >
       {/* Technical Modernist Interactive Preloader */}
-      <PageLoader isTheme={isTheme} />
+      <PageLoader isTheme={isTheme} onLoaded={() => setIsSiteLoaded(true)} />
 
       {/* Living Ambient LED Dot Matrix Substrate */}
       <InteractiveDotBackground isTheme={isTheme} />
@@ -93,8 +95,8 @@ export default function HomePage() {
       {/* Comprehensive Full-Width Footer */}
       <Footer isTheme={isTheme} />
 
-      {/* Quick Access Floating Social Dock */}
-      <SocialDock isTheme={isTheme} />
+      {/* Quick Access Floating Social Dock - Only visible after loading screen */}
+      {isSiteLoaded && <SocialDock isTheme={isTheme} />}
     </div>
   );
 }

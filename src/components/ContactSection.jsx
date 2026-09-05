@@ -252,16 +252,16 @@ export default function ContactSection({ isTheme, prefill }) {
                 <div className="flex items-center gap-2.5">
                   <MessageSquare size={15} className="text-neutral-400 shrink-0" />
                   <a
-                    href="https://wa.me/2347025302018?text=Hello%20Adeyemi%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
+                    href="https://wa.me/2347079992561?text=Hello%20Adeyemi%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-emerald-500 hover:underline transition-colors"
                   >
-                    +234 702 530 2018
+                    +234 707 999 2561
                   </a>
                 </div>
                 <a
-                  href="https://wa.me/2347025302018?text=Hello%20Adeyemi%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
+                  href="https://wa.me/2347079992561?text=Hello%20Adeyemi%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
                   target="_blank"
                   rel="noreferrer"
                   className="group px-2.5 py-1 border border-inherit text-[10px] uppercase font-semibold transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 hover:text-black flex items-center gap-1"

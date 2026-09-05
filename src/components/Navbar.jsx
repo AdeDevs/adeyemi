@@ -4,6 +4,7 @@ import { Sun, Moon, FileText, ArrowUpRight } from "lucide-react";
 
 export default function Navbar({ isTheme, toggleTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const navRef = useRef(null);
 
   const navLinks = [
@@ -12,6 +13,22 @@ export default function Navbar({ isTheme, toggleTheme }) {
     { label: "Services", href: "#services" },
     { label: "Contact", href: "#contact" },
   ];
+
+  // Real-time smooth scroll progress tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (windowHeight > 0) {
+        const scrolled = (totalScroll / windowHeight) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, scrolled)));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
@@ -43,12 +60,22 @@ export default function Navbar({ isTheme, toggleTheme }) {
       className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[95%] sm:w-[92%] max-w-6xl z-50 transition-all duration-300"
     >
       <div
-        className={`border px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between transition-all duration-200 backdrop-blur-xl backdrop-saturate-180 ${
+        className={`relative border px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between transition-all duration-200 backdrop-blur-xl backdrop-saturate-180 overflow-hidden ${
           isTheme
             ? "bg-white/60 border-white/60 text-neutral-900 shadow-[0_8px_32px_0_rgba(0,0,0,0.06),inset_0_1px_0_0_rgba(255,255,255,0.85)]"
             : "bg-[#090b0e]/60 border-white/10 text-neutral-100 shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
         }`}
       >
+        {/* Hardware Telemetry Scroll Buffer Track (1.5px high along bottom rim) */}
+        <div
+          className="absolute bottom-0 left-0 h-[1.5px] bg-emerald-500 transition-[width] duration-150 ease-out will-change-[width]"
+          style={{ width: `${scrollProgress}%` }}
+          role="progressbar"
+          aria-valuenow={Math.round(scrollProgress)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Page reading buffer progress"
+        />
         {/* Brand Logo */}
         <div className="flex items-center gap-4">
           <NavLink
