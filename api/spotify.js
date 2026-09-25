@@ -1,6 +1,6 @@
-const client_id = process.env.SPOTIFY_CLIENT_ID || "2debc6156b7a41e18e39275868ff659a";
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET || "90ff1f7831c94a31804ecb9776225d72";
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN || "AQAQHDC70_zH_3cariUY43YuvYOBfaoh5LEdqUYvtB_tzHUrmXMgU84VKHy4tCRLty-eElNHi9ESzv9R1NuAJey0SzSVFZjHHOblQv-pV4xd72B27p97pFznoAHLOkA0-B8";
+const client_id = process.env.SPOTIFY_CLIENT_ID;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
