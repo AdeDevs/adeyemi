@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iamadedevs.vercel.app/sitemap.xml

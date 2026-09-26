@@ -1,9 +1,9 @@
-import kaziImg from '../assets/kazi.png';
-import directrentImg from '../assets/directrent.png';
-import maishaImg from '../assets/maisha.png';
-import spotifyImg from '../assets/spotify.png';
-import wordcounterImg from '../assets/wordcounter.png';
-import journalImg from '../assets/journal.png';
+import kaziImg from '../assets/kazi.webp';
+import directrentImg from '../assets/directrent.webp';
+import maishaImg from '../assets/maisha.webp';
+import spotifyImg from '../assets/spotify.webp';
+import wordcounterImg from '../assets/wordcounter.webp';
+import journalImg from '../assets/journal.webp';
 
 export const featuredProjects = [
   {

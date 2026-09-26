@@ -53,6 +53,7 @@ export default function Hero({ isTheme }) {
               isTheme ? "text-neutral-950" : "text-neutral-50"
             }`}
           >
+            <span className="sr-only">Adeyemi Akinyemi, </span>
             Frontend Developer.
           </motion.h1>
 
@@ -116,8 +117,11 @@ export default function Hero({ isTheme }) {
             {/* Profile Image with Sharp Corners */}
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-neutral-300 dark:border-neutral-800 bg-neutral-900 group">
               <img
-                src="/yemi.png"
-                alt="Adeyemi Akinyemi"
+                src="/yemi.webp"
+                alt="Portrait of Adeyemi Akinyemi"
+                width={800}
+                height={800}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
               />
             </div>
