@@ -63,7 +63,7 @@ export default function Hero({ isTheme }) {
               isTheme ? "text-neutral-900" : "text-neutral-200"
             }`}
           >
-            Check out more about me
+            React &amp; Next.js developer based in Lagos, Nigeria
           </motion.h2>
 
           <motion.div variants={itemVariants} className="text-base sm:text-lg leading-relaxed space-y-4 max-w-2xl mb-8">
