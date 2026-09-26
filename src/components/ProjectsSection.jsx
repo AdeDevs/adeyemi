@@ -254,7 +254,7 @@ export default function ProjectsSection({ isTheme }) {
                           >
                             <img
                               src={project.image}
-                              alt={project.title}
+                              alt={`Screenshot of the ${project.title} website`}
                               loading="lazy"
                               className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/preview:scale-105"
                             />

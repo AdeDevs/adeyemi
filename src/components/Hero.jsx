@@ -53,6 +53,7 @@ export default function Hero({ isTheme }) {
               isTheme ? "text-neutral-950" : "text-neutral-50"
             }`}
           >
+            <span className="sr-only">Adeyemi Akinyemi, </span>
             Frontend Developer.
           </motion.h1>
 
@@ -62,7 +63,7 @@ export default function Hero({ isTheme }) {
               isTheme ? "text-neutral-900" : "text-neutral-200"
             }`}
           >
-            Check out more about me
+            React &amp; Next.js developer based in Lagos, Nigeria
           </motion.h2>
 
           <motion.div variants={itemVariants} className="text-base sm:text-lg leading-relaxed space-y-4 max-w-2xl mb-8">
@@ -116,8 +117,11 @@ export default function Hero({ isTheme }) {
             {/* Profile Image with Sharp Corners */}
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-neutral-300 dark:border-neutral-800 bg-neutral-900 group">
               <img
-                src="/yemi.png"
-                alt="Adeyemi Akinyemi"
+                src="/yemi.webp"
+                alt="Portrait of Adeyemi Akinyemi"
+                width={800}
+                height={800}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
               />
             </div>
